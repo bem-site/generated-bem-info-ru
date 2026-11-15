@@ -1,0 +1,472 @@
+<!DOCTYPE html><html class="ua_js_no" lang="ru"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ua / touch-pad / 2.9.0 / bem-core / Классические БЭМ-библиотеки / Библиотеки / БЭМ</title><script>(function(e,c){e[c]=e[c].replace(/(ua_js_)no/g,"$1yes");})(document.documentElement,"className");(function(d,n){d.documentElement.className+=" ua_svg_"+(d[n]&&d[n]("http://www.w3.org/2000/svg","svg").createSVGRect?"yes":"no");})(document,"createElementNS");</script><link rel="stylesheet" href="../../../../../../libraries.min.css?0459"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="bem-site-root" content="../../../../../../"><link rel="canonical" href="https://ru-test.bem.info/libraries/classic/bem-core/2.9.0/touch-pad/ua/"><link rel="alternate" hreflang="en" href="https://en-test.bem.info/libraries/classic/bem-core/2.9.0/touch-pad/ua/"><link rel="alternate" hreflang="ru" href="https://ru-test.bem.info/libraries/classic/bem-core/2.9.0/touch-pad/ua/"><meta name="robots" content="noindex"><meta property="og:image" content="../../../../../../og_image/logo_theme_generated.png"><meta property="og:url" content="../../../../../../libraries/classic/bem-core/2.9.0/touch-pad/ua/"><meta property="og:type" content="article"><meta property="og:description" content="ua"><meta property="og:keywords" content="libs, bem-core"><link rel="shortcut icon" href="../../../../../../favicon.ico"></head><body class="page"><div class="header page__head i-bem" data-bem='{"header":{}}'><div class="header__layout"><a class="logo header__logo" href="../../../../../../"><svg class="logo__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101.7 84"><path d="M0 13h23.8v7H0zM0 0h23.8v7H0zm42.7 25.9H0v7h41.1c4.5 0 15 .1 18.9 6.4v-3.9c-1.9-6.2-7.5-9.5-17.3-9.5zm.1 13H0v7h41.1c10 0 16.3.4 18.9 1.8v-3.1c-2-4.9-10.4-5.7-17.2-5.7zm-.1 33H0v-7h41.1c4.5 0 15-.1 18.9-6.4v3.9c-1.9 6.2-7.5 9.5-17.3 9.5zm.1-13H0v-7h41.1c10 0 16.3-.4 18.9-1.8v3.1c-2 4.9-10.4 5.7-17.2 5.7zM70.4 84h31.4v-4.3H71.3c-2.7 0-9.1-.1-11.4-3.8v2.4C61 82 64.4 84 70.4 84zm-.1-7.9h31.4v-4.3H71.3c-6.1 0-9.9-.2-11.4-1.1v1.9c1.2 3 6.3 3.5 10.4 3.5z"/></svg></a><div class="lang-switcher header__lang"><a class="lang-switcher__link" href="https://en-test.bem.info/libraries/classic/bem-core/2.9.0/touch-pad/ua/">EN</a><span class="lang-switcher__separator"> </span>RU</div><a class="header__forum" href="https://github.com/bem-site/bem.info/issues">Issues</a></div><div class="search header__search i-bem" data-bem='{"search":{}}'><div class="search__form"><span class="input input_type_search i-bem" data-bem='{"input":{}}'><span class="input__box"><input class="input__control" name="q" placeholder="Поиск по сайту" autocomplete="off" type="search"></span></span><span class="search__submit" role="button" aria-label="search"><div class="search-icon search__submit-icon"><svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="6"/><path d="M11 11l5 5"/></svg></div></span><div class="search__results" role="listbox"></div></div></div><ul class="breadcrumbs header__breadcrumbs"><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../../../libraries/">Библиотеки</a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../../../libraries/classic/">Классические БЭМ-библиотеки</a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../../../libraries/classic/bem-core/">bem-core</a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../../../libraries/classic/bem-core/2.9.0/">2.9.0</a></li><li class="breadcrumbs__item breadcrumbs__version"><div class="select select_header select_mode_radio-check select_theme_islands select_size_l"></div></li></ul><div class="header__toggle"><span class="header__toggle-line"></span></div></div><div class="sitemap page__sitemap"><div class="sitemap__section sitemap__section_site_methodology"><h1 class="sitemap__title sitemap__title_site_methodology"><a class="sitemap__link" href="../../../../../../methodology/">Методология</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/quick-start/">Быстрый старт</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/key-concepts/">Основные понятия</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/naming-convention/">Соглашение по именованию</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/css/">CSS</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/html/">HTML</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/js/">JavaScript</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/filestructure/">Файловая структура</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/redefinition-levels/">Уровни переопределения</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/block-modification/">Модификация блока</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/build/">Сборка</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/declarations/">Декларации</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/solved-problems/">Какие проблемы решает</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/history/">История создания</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/articles/">Статьи</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../methodology/faq/">FAQ</a></li></ul></div><div class="sitemap__section sitemap__section_site_technologies"><h1 class="sitemap__title sitemap__title_site_technologies"><a class="sitemap__link" href="../../../../../../technologies/">Технологии</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../technologies/classic/">Классический БЭМ-стек</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/classic/bemjson/">Данные (BEMJSON)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/classic/bem-xjst/">Шаблоны (BEMHTML, BEMTREE)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/classic/i-bem/">Клиентский JavaScript (i-bem.js)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/classic/deps/">Зависимости</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/classic/deps-spec/">Спецификация DEPS</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/classic/project-stub/">Заготовка проекта</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../technologies/bem-react/">bem-react</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/bem-react/motivation/">Зачем БЭМ, если есть React?</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/bem-react/quick-start/">Быстрый старт</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/bem-react/structure/">Структура компонента</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/bem-react/lazy/">Ленивые модификаторы</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/bem-react/classname/">classname</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/bem-react/classnames/">classnames</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/bem-react/core/">core</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../technologies/bem-react/di/">di</a></li></ul></div><div class="sitemap__section sitemap__section_site_toolbox"><h1 class="sitemap__title sitemap__title_site_toolbox"><a class="sitemap__link" href="../../../../../../toolbox/">Инструментарий</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../toolbox/enb/">ENB</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/enb/api/">API</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/enb/techs/">Технологии для работы с файлами</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/enb/cli/">Использование из командной строки</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/enb/terms/">Терминология</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/enb/build-project/">Как собрать проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/enb/write-tech/">Как написать технологию</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/enb/express/">Автоматизация с помощью express</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/enb/packages/">Пакеты ENB</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../toolbox/bemhint/">bemhint</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/bemhint/css-naming/">CSS именование</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/bemhint/fs-naming/">Именование файлов</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/bemhint/deps-schema/">DEPS схема</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/bemhint/deps-specification/">DEPS спецификация</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../toolbox/bem-tools/">bem-tools</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../toolbox/bemmet/">bemmet</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../toolbox/sdk/">SDK</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-walk/">@bem/sdk.walk</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-config/">@bem/sdk.config</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-naming-entity/">@bem/sdk.naming.entity </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-naming-cell-stringify/">@bem/sdk.naming.cell.stringify </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-naming-cell-pattern-parser/">@bem/sdk.naming.cell.pattern-parser</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-naming-file-stringify/">@bem/sdk.naming.file.stringify</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-decl/">@bem/sdk.decl </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-bemjson-to-decl/">@bem/sdk.bemjson-to-decl</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-bemjson-to-jsx/">@bem/sdk.bemjson-to-jsx</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-import-notation/">@bem/sdk.import-notation</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-graph/">@bem/sdk.graph</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-deps/">@bem/sdk.deps</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-entity-name/">@bem/sdk.entity-name</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-file/">@bem/sdk.file</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-cell/">@bem/sdk.cell</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-bundle/">@bem/sdk.bundle</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../toolbox/sdk/bem-bemjson-node/">@bem/sdk.bemjson-node</a></li></ul></div><div class="sitemap__section sitemap__section_site_libraries"><h1 class="sitemap__title sitemap__title_site_libraries"><a class="sitemap__link" href="../../../../../../libraries/">Библиотеки</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../libraries/classic/">Классические БЭМ-библиотеки</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../libraries/classic/bem-core/">bem-core</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../libraries/classic/bem-components/">bem-components</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../libraries/classic/bem-history/">bem-history</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../libraries/classic/principles/">Принципы разработки БЭМ-библиотек</a></li></ul></div><div class="sitemap__section sitemap__section_site_tutorials"><h1 class="sitemap__title sitemap__title_site_tutorials"><a class="sitemap__link" href="../../../../../../tutorials/">Учебные материалы</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../../../tutorials/classic/">Классический БЭМ-стек</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../tutorials/classic/quick-start-static/">Собираем статическую страницу</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../tutorials/classic/start-with-project-stub/">Создаём статический БЭМ-проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../tutorials/classic/start-with-bem-express/">Создаём динамический БЭМ-проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../tutorials/classic/i-bem/">Справочное руководство i-bem.js</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../../../tutorials/classic/dist-quick-start/">Dist bem-components: подключаем блоки на страницу</a></li></ul></div></div><div class="page__menu"><ul class="nav page__nav"><li class="nav__item"><dl class="block-list blocks__list"><dt class="block-list__set-name">desktop</dt><dd class="block-list__set-list"><ul class="block-list__blocks"><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/clearfix/">clearfix</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/cookie/">cookie</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/dom/">dom</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/events/">events</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/functions/">functions</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/i-bem/">i-bem</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/i18n/">i18n</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/identify/">identify</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/idle/">idle</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/inherit/">inherit</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/jquery/">jquery</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/keyboard/">keyboard</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/loader/">loader</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/next-tick/">next-tick</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/objects/">objects</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/page/">page</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/querystring/">querystring</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/strings/">strings</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/tick/">tick</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/ua/">ua</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../desktop/vow/">vow</a></li></ul></dd><dt class="block-list__set-name">touch-pad</dt><dd class="block-list__set-list"><ul class="block-list__blocks"><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/clearfix/">clearfix</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/cookie/">cookie</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/dom/">dom</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/events/">events</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/functions/">functions</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/i-bem/">i-bem</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/i18n/">i18n</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/identify/">identify</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/idle/">idle</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/inherit/">inherit</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/jquery/">jquery</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/keyboard/">keyboard</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/loader/">loader</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/next-tick/">next-tick</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/objects/">objects</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/page/">page</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/querystring/">querystring</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/strings/">strings</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/tick/">tick</a></li><li class="block-list__block block-list__block_current">ua</li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-pad/vow/">vow</a></li></ul></dd><dt class="block-list__set-name">touch-phone</dt><dd class="block-list__set-list"><ul class="block-list__blocks"><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/clearfix/">clearfix</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/cookie/">cookie</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/dom/">dom</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/events/">events</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/functions/">functions</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/i-bem/">i-bem</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/i18n/">i18n</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/identify/">identify</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/idle/">idle</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/inherit/">inherit</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/jquery/">jquery</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/keyboard/">keyboard</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/loader/">loader</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/next-tick/">next-tick</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/objects/">objects</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/page/">page</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/querystring/">querystring</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/strings/">strings</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/tick/">tick</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/ua/">ua</a></li><li class="block-list__block"><a class="link block-list__link link__control i-bem" data-bem='{"link":{}}' role="link" href="../../touch-phone/vow/">vow</a></li></ul></dd></dl></li></ul></div><div class="page__main"><div class="block-info blocks__data article page__content"><div class="block-tabs i-bem" data-bem='{"block-tabs":{}}'><a class="block-tabs__tab block-tabs__tab_current" href="#docs">Documentation</a><a class="block-tabs__tab" href="#jsdoc">JSDoc</a><a class="block-tabs__tab" href="#source">Source</a><div class="block-tabs__pane block-tabs__pane_active"><div class="block-doc article i-bem" data-bem='{"block-doc":{}}'><h1 class="article__heading article__heading_1" id="ua-4"><a href="#ua-4" class="article__heading-anchor"></a>ua</h1><p>Блок служит для сбора данных о браузере пользователя. </p>
+<h2 class="article__heading article__heading_2" id="Обзор-49"><a href="#Обзор-49" class="article__heading-anchor"></a>Обзор</h2><h3 class="article__heading article__heading_3" id="Элементы-блока-47"><a href="#Элементы-блока-47" class="article__heading-anchor"></a>Элементы блока</h3><table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Способы использования</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#elems-svg">svg</a></td>
+<td><code>deps</code></td>
+<td>Проверяет, поддерживает ли браузер формат SVG.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article__heading article__heading_3" id="Публичные-технологии-блока-60"><a href="#Публичные-технологии-блока-60" class="article__heading-anchor"></a>Публичные технологии блока</h3><p>Блок реализован в технологиях:</p>
+<ul>
+<li><code>bh.js</code></li>
+<li><code>bemhtml</code></li>
+</ul>
+<h2 class="article__heading article__heading_2" id="Подробности-37"><a href="#Подробности-37" class="article__heading-anchor"></a>Подробности</h2><p>Блок подключает инлайновый скрипт, добавляющий тегу <code>&lt;html&gt;</code> <code>CSS</code>-классы, указывающие, включен ли JavaScript – <code>ua_js_no</code>/<code>ua_js_yes</code>. </p>
+<p>Не имеет визуального представления на странице.</p>
+<p>Используется внутри блока <a href="https://github.com/bem/bem-core/blob/v2/common.blocks/page/page.ru.md">page</a> и самостоятельно подключать его к странице обычно не требуется.</p>
+<p><a name="elems"></a></p>
+<h3 class="article__heading article__heading_3" id="Элементы-блока-48"><a href="#Элементы-блока-48" class="article__heading-anchor"></a>Элементы блока</h3><p><a name="elems-svg"></a></p>
+<h4 class="article__heading article__heading_4" id="Элемент-svg-2"><a href="#Элемент-svg-2" class="article__heading-anchor"></a>Элемент <code>svg</code></h4><p>Элемент подключает инлайновый скрипт, добавляющий тегу <code>&lt;html&gt;</code> <code>CSS</code>-классы, указывающие, поддерживается ли SVG – <code>ua_svg_no</code>/<code>ua_svg_yes</code>.</p>
+<p>Не имеет визуального представления на странице.</p>
+<p>Для использования включите элемент в файл зависимостей <code>deps.js</code> блока, которому требуются данные о поддержке SVG:</p>
+<div class="block-example i-bem" data-bem='{"block-example":{}}'><div class="block-example__info"><a class="link link_theme_islands link__control i-bem" data-bem='{"link":{}}' role="link" href="https://ru-test.bem.info/_st_/bem-core-examples/2.9.0/touch-pad/ua/xwdM5EFeTinUwG_RSViGelI1y8.ru.html" target="_blank">Open in a new window</a><div class="popup popup_theme_islands popup_autoclosable popup_target_anchor dropdown dropdown_switcher_link dropdown_theme_islands dropdown_size_m i-bem" data-bem='{"popup":{},"dropdown":{"id":"uniq1794764375267136"}}' id="uniq1794764375267136" aria-hidden="true"><pre class="block-source"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre></div><span class="link link_pseudo link_theme_islands dropdown dropdown_switcher_link dropdown_theme_islands dropdown_size_m dropdown__switcher dropdown__switcher_switcher_link link__control i-bem" data-bem='{"link":{},"dropdown":{"id":"uniq1794764375267136"},"dropdown__switcher":{}}' aria-haspopup="true" aria-controls="uniq1794764375267136" aria-expanded="false" role="button" tabindex="0">HTML</span><div class="popup popup_theme_islands popup_autoclosable popup_target_anchor dropdown dropdown_switcher_link dropdown_theme_islands dropdown_size_m i-bem" data-bem='{"popup":{},"dropdown":{"id":"uniq1794764375267137"}}' id="uniq1794764375267137" aria-hidden="true"><pre class="block-source">{
+    <span class="hljs-attr">shouldDeps</span>: {
+        <span class="hljs-attr">block</span>: <span class="hljs-string">'ua'</span>,
+        <span class="hljs-attr">elem</span>: <span class="hljs-string">'svg'</span>
+    }
+}
+</pre></div><span class="link link_pseudo link_theme_islands dropdown dropdown_switcher_link dropdown_theme_islands dropdown_size_m dropdown__switcher dropdown__switcher_switcher_link link__control i-bem" data-bem='{"link":{},"dropdown":{"id":"uniq1794764375267137"},"dropdown__switcher":{}}' aria-haspopup="true" aria-controls="uniq1794764375267137" aria-expanded="false" role="button" tabindex="0">BEMJSON</span><div class="popup popup_theme_islands popup_autoclosable popup_target_anchor dropdown dropdown_switcher_link dropdown_theme_islands dropdown_size_m i-bem" data-bem='{"popup":{},"dropdown":{"id":"uniq1794764375267138"}}' id="uniq1794764375267138" aria-hidden="true"><pre class="block-source">[
+    <span class="hljs-literal">null</span>
+]
+</pre></div><span class="link link_pseudo link_theme_islands dropdown dropdown_switcher_link dropdown_theme_islands dropdown_size_m dropdown__switcher dropdown__switcher_switcher_link link__control i-bem" data-bem='{"link":{},"dropdown":{"id":"uniq1794764375267138"},"dropdown__switcher":{}}' aria-haspopup="true" aria-controls="uniq1794764375267138" aria-expanded="false" role="button" tabindex="0">deps</span></div><iframe class="block-example__preview" src="https://ru-test.bem.info/_st_/bem-core-examples/2.9.0/touch-pad/ua/xwdM5EFeTinUwG_RSViGelI1y8.ru.html"></iframe></div> 
+
+<h1 class="article__heading article__heading_1" id="ua-5"><a href="#ua-5" class="article__heading-anchor"></a>ua</h1><p>На уровне <code>touch</code>, блок предоставляет объект, содержащий набор свойств, указывающих особенности мобильного устройства.</p>
+<h2 class="article__heading article__heading_2" id="Обзор-50"><a href="#Обзор-50" class="article__heading-anchor"></a>Обзор</h2><h3 class="article__heading article__heading_3" id="Свойства-и-методы-объекта-61"><a href="#Свойства-и-методы-объекта-61" class="article__heading-anchor"></a>Свойства и методы объекта</h3><table>
+<thead>
+<tr>
+<th>Имя</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#fields-ua">ua</a></td>
+<td><code>{String}</code></td>
+<td>Значение HTTP-заголовка юзер-агента.</td>
+</tr>
+<tr>
+<td><a href="#fields-ios">ios</a></td>
+<td><code>{String}</code>&#124;<code>{undefined}</code></td>
+<td>Версия мобильной платформы iOS.</td>
+</tr>
+<tr>
+<td><a href="#fields-android">android</a></td>
+<td><code>{String}</code>&#124;<code>{undefined}</code></td>
+<td>Версия мобильной платформы Android.</td>
+</tr>
+<tr>
+<td><a href="#fields-bada">bada</a></td>
+<td><code>{String}</code>&#124;<code>{undefined}</code></td>
+<td>Версия мобильной платформы Bada OS.</td>
+</tr>
+<tr>
+<td><a href="#fields-wp">wp</a></td>
+<td><code>{String}</code>&#124;<code>{undefined}</code></td>
+<td>Версия мобильной платформы Windows Phone.</td>
+</tr>
+<tr>
+<td><a href="#fields-other">other</a></td>
+<td><code>{Boolean}</code></td>
+<td>Мобильная платформа неопределена.</td>
+</tr>
+<tr>
+<td><a href="#fields-opera">opera</a></td>
+<td><code>{String}</code></td>
+<td>Версия браузера Opera.</td>
+</tr>
+<tr>
+<td><a href="#fields-chrome">chrome</a></td>
+<td><code>{String}</code></td>
+<td>Версия браузера Chrome.</td>
+</tr>
+<tr>
+<td><a href="#fields-iphone">iphone</a></td>
+<td><code>{Boolean}</code></td>
+<td>Устройство – iPhone.</td>
+</tr>
+<tr>
+<td><a href="#fields-ipad">ipad</a></td>
+<td><code>{Boolean}</code></td>
+<td>Устройство – iPad.</td>
+</tr>
+<tr>
+<td><a href="#fields-screenSize">screenSize</a></td>
+<td><code>{String}</code></td>
+<td>Размер экрана устройства.</td>
+</tr>
+<tr>
+<td><a href="#fields-connection">connection</a></td>
+<td><code>{String}</code></td>
+<td>Тип активного соединения.</td>
+</tr>
+<tr>
+<td><a href="#fields-dpr">dpr</a></td>
+<td><code>{Number}</code></td>
+<td>Относительная плотность пикселей.</td>
+</tr>
+<tr>
+<td><a href="#fields-flash">flash</a></td>
+<td><code>{String}</code>&#124;<code>{undefined}</code></td>
+<td>Версия Adobe Flash.</td>
+</tr>
+<tr>
+<td><a href="#fields-video">video</a></td>
+<td><code>{Boolean}</code></td>
+<td>Поддержка видео.</td>
+</tr>
+<tr>
+<td><a href="#fields-width">width</a></td>
+<td><code>{Number}</code></td>
+<td>Ширина рабочей области экрана в px.</td>
+</tr>
+<tr>
+<td><a href="#fields-height">height</a></td>
+<td><code>{Number}</code></td>
+<td>Высота рабочей области экрана в px.</td>
+</tr>
+<tr>
+<td><a href="#fields-landscape">landscape</a></td>
+<td><code>{Boolean}</code></td>
+<td>Ориентация устройства.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article__heading article__heading_3" id="Элементы-блока-49"><a href="#Элементы-блока-49" class="article__heading-anchor"></a>Элементы блока</h3><table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Способы использования</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#elems-dom">dom</a></td>
+<td><code>JS</code></td>
+<td>Предоставляет набор модификаторов на основании свойств блока <code>ua</code> на тач-уровне.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article__heading article__heading_3" id="Модификаторы-элемента-блока-1"><a href="#Модификаторы-элемента-блока-1" class="article__heading-anchor"></a>Модификаторы элемента блока</h3><table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Модификатор</th>
+<th>Допустимые значения</th>
+<th>Способы использования</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#elems-dom">dom</a></td>
+<td><a href="#modifiers-platform">platform</a></td>
+<td><code>&#39;ios&#39;</code>, <code>&#39;android&#39;</code>, <code>&#39;bada&#39;</code>, <code>&#39;wp&#39;</code>, <code>&#39;other&#39;</code></td>
+<td><code>JS</code></td>
+<td>Мобильная платформа пользовательского устройства.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#modifiers-browser">browser</a></td>
+<td><code>&#39;opera&#39;</code>, <code>&#39;chrome&#39;</code></td>
+<td><code>JS</code></td>
+<td>Тип браузера.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#modifiers-ios">ios</a></td>
+<td><code>&#39;8&#39;</code>, <code>&#39;7&#39;</code> ...</td>
+<td><code>JS</code></td>
+<td>Версия операционной системы для устройств iOS.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#modifiers-ios-subversion">ios-subversion</a></td>
+<td><code>&#39;81&#39;</code>, <code>&#39;80&#39;</code> ...</td>
+<td><code>JS</code></td>
+<td>Подверсия операционной системы для устройств iOS.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#modifiers-android">android</a></td>
+<td><code>&#39;4&#39;</code>, <code>&#39;3&#39;</code> ...</td>
+<td><code>JS</code></td>
+<td>Версия операционной системы для устройств Android.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#modifiers-screen-size">screen-size</a></td>
+<td><code>&#39;large&#39;</code>, <code>&#39;normal&#39;</code>, <code>&#39;small&#39;</code></td>
+<td><code>JS</code></td>
+<td>Размер экрана устройства.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#modifiers-svg">svg</a></td>
+<td><code>&#39;yes&#39;</code>, <code>&#39;no&#39;</code></td>
+<td><code>JS</code></td>
+<td>Поддержка формата SVG.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#modifiers-orient">orient</a></td>
+<td><code>&#39;landscape&#39;</code>, <code>&#39;portrait&#39;</code></td>
+<td><code>JS</code></td>
+<td>Ориентация устройства.</td>
+</tr>
+</tbody>
+</table>
+<h3 class="article__heading article__heading_3" id="Публичные-технологии-блока-61"><a href="#Публичные-технологии-блока-61" class="article__heading-anchor"></a>Публичные технологии блока</h3><p>Блок реализован в технологиях:</p>
+<ul>
+<li><code>js</code></li>
+<li><code>bh.js</code></li>
+<li><code>bemhtml</code></li>
+</ul>
+<h2 class="article__heading article__heading_2" id="Подробности-38"><a href="#Подробности-38" class="article__heading-anchor"></a>Подробности</h2><p>Блок позволяет определить:</p>
+<ul>
+<li>Версию мобильной платформы.</li>
+<li>Типа браузера.</li>
+<li>Версию браузера.</li>
+<li>Тип соединения.</li>
+<li>Наличие поддержки видео и SVG.</li>
+<li>Поддержку технологии Adobe Flash.</li>
+<li>Ориентацию и размер экрана.</li>
+<li>Соотношение сторон экрана устройства.</li>
+</ul>
+<pre><code class="lang-js">modules.require(<span class="hljs-string">'ua'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ua</span>) </span>{
+
+<span class="hljs-built_in">console</span>.dir(ua);
+
+});
+</code></pre>
+<p><a name="fields"></a></p>
+<h3 class="article__heading article__heading_3" id="Свойства-и-методы-объекта-62"><a href="#Свойства-и-методы-объекта-62" class="article__heading-anchor"></a>Свойства и методы объекта</h3><p><a name="fields-ua"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-ua-1"><a href="#Свойство-ua-1" class="article__heading-anchor"></a>Свойство <code>ua</code></h4><p>Тип: <code>{String}</code>.</p>
+<p>Тип мобильного браузера.</p>
+<p><a name="fields-ios"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-ios-1"><a href="#Свойство-ios-1" class="article__heading-anchor"></a>Свойство <code>ios</code></h4><p>Тип: <code>{String|undefined}</code>.</p>
+<p>Версия мобильной платформы. Строка с номером версии, если платформа распознана как iOS.</p>
+<p><a name="fields-android"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-android-1"><a href="#Свойство-android-1" class="article__heading-anchor"></a>Свойство <code>android</code></h4><p>Тип: <code>{String|undefined}</code>.</p>
+<p>Версия мобильной платформы. Строка с номером версии, если платформа распознана как Android.</p>
+<p><a name="fields-bada"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-bada-1"><a href="#Свойство-bada-1" class="article__heading-anchor"></a>Свойство <code>bada</code></h4><p>Тип: <code>{String|undefined}</code>.</p>
+<p>Версия мобильной платформы. Строка с номером версии, если платформа распознана как Bada OS.</p>
+<p><a name="fields-wp"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-wp-1"><a href="#Свойство-wp-1" class="article__heading-anchor"></a>Свойство <code>wp</code></h4><p>Тип: <code>{String|undefined}</code>.</p>
+<p>Версия мобильной платформы. Строка с номером версии, если платформа распознана как Windows Phone.</p>
+<p><a name="fields-other"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-other-1"><a href="#Свойство-other-1" class="article__heading-anchor"></a>Свойство <code>other</code></h4><p>Тип: <code>{Boolean}</code>.</p>
+<p>Мобильная платформа неопределена. Устанавливается в значение <code>true</code> для всех мобильных платформ, кроме вышеперечисленных.</p>
+<p><a name="fields-opera"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-opera-2"><a href="#Свойство-opera-2" class="article__heading-anchor"></a>Свойство <code>opera</code></h4><p>Тип: <code>{String}</code>.</p>
+<p>Версия браузера Opera.</p>
+<p><a name="fields-chrome"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-chrome-2"><a href="#Свойство-chrome-2" class="article__heading-anchor"></a>Свойство <code>chrome</code></h4><p>Тип: <code>{String}</code>.</p>
+<p>Версия браузера Chrome.</p>
+<p><a name="fields-iphone"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-iphone-1"><a href="#Свойство-iphone-1" class="article__heading-anchor"></a>Свойство <code>iphone</code></h4><p>Тип: <code>{Boolean}</code>.</p>
+<p>Значение <code>true</code> характеризует устройство как iPhone.</p>
+<p><a name="fields-ipad"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-ipad-1"><a href="#Свойство-ipad-1" class="article__heading-anchor"></a>Свойство <code>ipad</code></h4><p>Тип: <code>{Boolean}</code>.</p>
+<p>Значение <code>true</code> характеризует устройство как iPad.</p>
+<p><a name="fields-screenSize"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-screensize-1"><a href="#Свойство-screensize-1" class="article__heading-anchor"></a>Свойство <code>screenSize</code></h4><p>Тип: <code>{String}</code>.</p>
+<p>Размер экрана устройства.</p>
+<p>Доступны следующие значения:</p>
+<ul>
+<li><code>large</code> – размер экрана больше 320 px.</li>
+<li><code>normal</code> – размер экрана равен 320 px.</li>
+<li><code>small</code> – размер экрана меньше 320 px.</li>
+</ul>
+<p><a name="fields-connection"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-connection-1"><a href="#Свойство-connection-1" class="article__heading-anchor"></a>Свойство <code>connection</code></h4><p>Тип: <code>{String}</code>.</p>
+<p>Тип активного сетевого соединения.</p>
+<p>Доступны следующие значения:</p>
+<ul>
+<li><code>wifi</code> – соединение по Wi-Fi.</li>
+<li><code>3g</code> – соединение по 3G.</li>
+<li><code>2g</code> – соединение по EDGE и GSM.</li>
+</ul>
+<p><a name="fields-dpr"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-dpr-1"><a href="#Свойство-dpr-1" class="article__heading-anchor"></a>Свойство <code>dpr</code></h4><p>Тип: <code>{Number}</code>.</p>
+<p>Коэффициент относительной плотности пикселей. Характеризует отношение физических пикселей устройства к аппаратно независимым (dppx). Позволяет определить использует ли устройство дисплей с повышенной плотностью пикселей (например, Retina). По умолчанию <code>1</code>.</p>
+<p>Например, можно проверить, что устройство использует Retina и отдавать браузеру изображения с высоким разрешением:</p>
+<pre><code class="lang-js">modules.require(<span class="hljs-string">'ua'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ua</span>) </span>{
+
+<span class="hljs-keyword">var</span> imgFile = ua.dpr === <span class="hljs-number">1</span> ? <span class="hljs-string">'image.png'</span> : <span class="hljs-string">'image@2x.png'</span>;
+<span class="hljs-comment">// ···</span>
+
+});
+</code></pre>
+<p><a name="fields-flash"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-flash-1"><a href="#Свойство-flash-1" class="article__heading-anchor"></a>Свойство <code>flash</code></h4><p>Тип: <code>{String|undefined}</code>.</p>
+<p>Версия Adobe Flash. <code>undefined</code>, если Flash недоступен.</p>
+<p><a name="fields-video"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-video-1"><a href="#Свойство-video-1" class="article__heading-anchor"></a>Свойство <code>video</code></h4><p>Тип: <code>{Boolean}</code>.</p>
+<p>Значение <code>true</code>, если видео поддерживается.</p>
+<p><a name="fields-svg"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-svg-1"><a href="#Свойство-svg-1" class="article__heading-anchor"></a>Свойство <code>svg</code></h4><p>Тип: <code>{Boolean}</code>.</p>
+<p>Значение <code>true</code>, если SVG поддерживается.</p>
+<p><a name="fields-width"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-width-1"><a href="#Свойство-width-1" class="article__heading-anchor"></a>Свойство <code>width</code></h4><p>Тип: <code>{Number}</code>.</p>
+<p>Ширина рабочей области экрана в пикселях.</p>
+<p><a name="fields-height"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-height-1"><a href="#Свойство-height-1" class="article__heading-anchor"></a>Свойство <code>height</code></h4><p>Тип: <code>{Number}</code>.</p>
+<p>Высота рабочей области экрана в пикселях.</p>
+<p><a name="fields-landscape"></a></p>
+<h4 class="article__heading article__heading_4" id="Свойство-landscape-1"><a href="#Свойство-landscape-1" class="article__heading-anchor"></a>Свойство <code>landscape</code></h4><p>Тип: <code>{Boolean}</code>.</p>
+<p>Значение <code>true</code> при горизонтальной ориентации.</p>
+
+<p><a name="#elems-dom"></p>
+<h1 class="article__heading article__heading_1" id="Элемент-dom-блока-ua-1"><a href="#Элемент-dom-блока-ua-1" class="article__heading-anchor"></a>Элемент <code>dom</code> блока <code>ua</code></h1><p>Элемент служит для дополнения базовой БЭМ-сущности блока <code>ua</code> набором модификаторов на основе данных, собранных блоком <code>ua</code> на touch-уровне.</p>
+<p>Это позволяет учитывать особенности мобильного устройства, проверяя наличие и значение модификаторов.</p>
+<pre><code class="lang-js">modules.define(<span class="hljs-string">'ios-test'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) </span>{
+
+provide(BEMDOM.decl(<span class="hljs-keyword">this</span>.name, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-attr">js</span>: {
+            <span class="hljs-attr">inited</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">this</span>.findBlockOutside(<span class="hljs-string">'ua'</span>).hasMod(<span class="hljs-string">'platform'</span>, <span class="hljs-string">'ios'</span>) &amp;&amp;
+                    <span class="hljs-keyword">this</span>.setMod(<span class="hljs-string">'ios'</span>);
+            }
+        },
+        <span class="hljs-string">'ios'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'You are iOS user'</span>);
+        }
+    }
+}));
+
+});
+</code></pre>
+<p>Элемент автоматически подключается с блоком <code>page</code>. Не требуется подключать его вручную, если в проекте используется <code>page</code>.</p>
+<p><a name="modifiers"></a></p>
+<h2 class="article__heading article__heading_2" id="Модификаторы-элемента-4"><a href="#Модификаторы-элемента-4" class="article__heading-anchor"></a>Модификаторы элемента</h2><p>Значения всех модификаторов элемента, кроме <code>orient</code>, устанавливаются в момент инициализации блока и остаются неизменными.</p>
+<p><a name="modifiers-platform"></a></p>
+<h3 class="article__heading article__heading_3" id="Модификатор-platform-1"><a href="#Модификатор-platform-1" class="article__heading-anchor"></a>Модификатор <code>platform</code></h3><p>Допустимые значения: <code>&#39;ios&#39;</code>, <code>&#39;android&#39;</code>, <code>&#39;bada&#39;</code>, <code>&#39;wp&#39;</code>, <code>&#39;other&#39;</code>.</p>
+<p>Способ использования: <code>JS</code>.</p>
+<p>Модификатор указывает мобильную платформу пользовательского устройства.</p>
+<ul>
+<li><code>ios</code> – iOS.</li>
+<li><code>android</code> – Android.</li>
+<li><code>bada</code> – Bada OS.</li>
+<li><code>wp</code> – Windows Phone.</li>
+<li><code>other</code> – все остальные мобильные платформы.</li>
+</ul>
+<p><a name="modifiers-browser"></a></p>
+<h3 class="article__heading article__heading_3" id="Модификатор-browser-1"><a href="#Модификатор-browser-1" class="article__heading-anchor"></a>Модификатор <code>browser</code></h3><p>Допустимые значения: <code>&#39;opera&#39;</code>, <code>&#39;chrome&#39;</code>.</p>
+<p>Способ использования: <code>JS</code>.</p>
+<p>Модификатор указывает тип мобильного браузера.</p>
+<ul>
+<li><code>opera</code> – Opera.</li>
+<li><code>chrome</code> – Chrome.</li>
+</ul>
+<p><a name="modifiers-ios"></a></p>
+<h3 class="article__heading article__heading_3" id="Модификатор-ios-1"><a href="#Модификатор-ios-1" class="article__heading-anchor"></a>Модификатор <code>ios</code></h3><p>Допустимые значения: <code>&#39;8&#39;</code>, <code>&#39;7&#39;</code> ...</p>
+<p>Способ использования: <code>JS</code>.</p>
+<p>Модификатор указывает версию операционной системы для устройств iOS.</p>
+<p><a name="modifiers-ios-subversion"></a></p>
+<h3 class="article__heading article__heading_3" id="Модификатор-ios-subversion-1"><a href="#Модификатор-ios-subversion-1" class="article__heading-anchor"></a>Модификатор <code>ios-subversion</code></h3><p>Допустимые значения: <code>&#39;81&#39;</code>, <code>&#39;80&#39;</code> ...</p>
+<p>Способ использования: <code>JS</code>.</p>
+<p>Модификатор указывает подверсию операционной системы для устройств iOS. Номер подверсии состоит из номера версии и первого символа после разделителя. Номер указывается без символов-разделителей <code>&#39;.&#39;</code>. Например, для iOS версии 8.1.3 значением модификатора будет <code>&#39;81&#39;</code>.</p>
+<p><a name="modifiers-android"></a></p>
+<h3 class="article__heading article__heading_3" id="Модификатор-android-1"><a href="#Модификатор-android-1" class="article__heading-anchor"></a>Модификатор <code>android</code></h3><p>Допустимые значения: <code>&#39;4&#39;</code>, <code>&#39;3&#39;</code> ...</p>
+<p>Способ использования: <code>JS</code>.</p>
+<p>Модификатор указывает версию операционной системы для устройств Android.</p>
+<p><a name="modifiers-screen-size"></a></p>
+<h3 class="article__heading article__heading_3" id="Модификатор-screen-size-1"><a href="#Модификатор-screen-size-1" class="article__heading-anchor"></a>Модификатор <code>screen-size</code></h3><p>Допустимые значения: <code>&#39;large&#39;</code>, <code>&#39;normal&#39;</code>, <code>&#39;small&#39;</code>.</p>
+<p>Способ использования: <code>JS</code>.</p>
+<p>Модификатор указывает размер экрана пользовательского устройства.</p>
+<ul>
+<li><code>large</code> – размер экрана больше 320 px.</li>
+<li><code>normal</code> – размер экрана равен 320 px.</li>
+<li><code>small</code> – размер экрана меньше 320 px.</li>
+</ul>
+<p><a name="modifiers-svg"></a></p>
+<h3 class="article__heading article__heading_3" id="Модификатор-svg-1"><a href="#Модификатор-svg-1" class="article__heading-anchor"></a>Модификатор <code>svg</code></h3><p>Допустимые значения: <code>&#39;yes&#39;</code>, <code>&#39;no&#39;</code>.</p>
+<p>Способ использования: <code>JS</code>.</p>
+<p>Модификатор указывает на наличие у пользовательского устройства поддержки формата SVG.</p>
+<ul>
+<li><code>yes</code> – поддержка SVG присутствует.</li>
+<li><code>no</code> – поддержка SVG отсутствует.</li>
+</ul>
+<p><a name="modifiers-orient"></a></p>
+<h3 class="article__heading article__heading_3" id="Модификатор-orient-1"><a href="#Модификатор-orient-1" class="article__heading-anchor"></a>Модификатор <code>orient</code></h3><p>Допустимые значения: <code>&#39;landscape&#39;</code>, <code>&#39;portrait&#39;</code>.</p>
+<p>Способ использования: <code>JS</code>.</p>
+<p>Модификатор указывает текущую ориентацию устройства.</p>
+<ul>
+<li><code>landscape</code> – горизонтальная ориентация.</li>
+<li><code>portrait</code> – вертикальная ориентация.</li>
+</ul>
+<p>Значение модификатора изменяется динамически при смене ориентации устройства. Поэтому можно подписываться на изменение значения модификатора:</p>
+<pre><code class="lang-js">modules.define(<span class="hljs-string">'inner'</span>, [<span class="hljs-string">'i-bem__dom'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">provide, BEMDOM</span>) </span>{
+
+provide(BEMDOM.decl(<span class="hljs-keyword">this</span>.name, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-attr">js</span>: {
+            <span class="hljs-attr">inited</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">this</span>._ua = <span class="hljs-keyword">this</span>
+                    .findBlockOutside(<span class="hljs-string">'ua'</span>)
+                    .on({ <span class="hljs-attr">modName</span> : <span class="hljs-string">'orient'</span>, <span class="hljs-attr">modVal</span> : <span class="hljs-string">'*'</span> }, <span class="hljs-keyword">this</span>._onOrientChange, <span class="hljs-keyword">this</span>);
+
+                <span class="hljs-keyword">this</span>.setMod(<span class="hljs-string">'orient'</span>, <span class="hljs-keyword">this</span>._ua.getMod(<span class="hljs-string">'orient'</span>));
+            },
+            <span class="hljs-string">''</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">this</span>._ua.un({ <span class="hljs-attr">modName</span> : <span class="hljs-string">'orient'</span>, <span class="hljs-attr">modVal</span> : <span class="hljs-string">'*'</span> }, <span class="hljs-keyword">this</span>._onOrientChange, <span class="hljs-keyword">this</span>);
+            }
+        },
+
+        <span class="hljs-string">'orient'</span>: {
+            <span class="hljs-string">'portrait'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">this</span>._reDraw(<span class="hljs-string">'portrait'</span>);
+            },
+            <span class="hljs-string">'landscape'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">this</span>._reDraw(<span class="hljs-string">'landscape'</span>);
+            }
+        }
+    },
+
+    <span class="hljs-attr">_onOrientChange</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, data</span>) </span>{
+        <span class="hljs-comment">// переключаемся между значениям собственного модификатора `orient`</span>
+        <span class="hljs-keyword">this</span>.setMod(data.modName, data.modVal);
+    },
+
+    <span class="hljs-attr">_reDraw</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">orient</span>) </span>{
+        <span class="hljs-comment">// обновляем содержимое контейнера `inner` при смене ориентации устройства</span>
+        <span class="hljs-built_in">console</span>.log(orient);
+        BEMDOM.update(<span class="hljs-keyword">this</span>.domElem, orient);
+    }
+}));
+
+});
+</code></pre>
+<p>В примере блок-контейнер <code>inner</code>, вложенный в <code>page</code>, подменяет свое содержимое при смене ориентации устройства.</p>
+</div></div><div class="block-tabs__pane"><div class="block-jsdoc block-jsdoc_engine_jsd"><div class="block-jsdoc__toc-item"><div class="block-jsdoc__toc-entity"><a class="link link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-ua-1">ua</a></div><div class="block-jsdoc__toc-title">Object methods:</div><a class="block-jsdoc__toc-link" href="#jsdoc-ua-1">ua</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-ios-1">ios</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-iphone-1">iphone</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-ipad-1">ipad</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-android-1">android</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-bada-1">bada</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-wp-1">wp</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-other-1">other</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-opera-1">opera</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-chrome-1">chrome</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-screenSize-1">screenSize</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-dpr-1">dpr</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-connection-1">connection</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-flash-1">flash</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-video-1">video</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-svg-1">svg</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-width-1">width</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-height-1">height</a><br><a class="block-jsdoc__toc-link" href="#jsdoc-landscape-1">landscape</a><br></div><div class="block-jsdoc__content-item"><a class="block-jsdoc__anchor" id="jsdoc-ua-1"></a><h1 class="block-jsdoc__block-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-Module ua-1"></a></span>Module ua</h1><div class="block-jsdoc__block-description">Detect some user agent features</div><div class="block-jsdoc__methods"><h2 class="block-jsdoc__methods-title">Object methods:</h2><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-ua-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-ua-1"></a></span>ua</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">User agent</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-ios-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-ios-1"></a></span>ios</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">iOS version</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-iphone-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-iphone-1"></a></span>iphone</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Is iPhone</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-ipad-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-ipad-1"></a></span>ipad</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Is iPad</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-android-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-android-1"></a></span>android</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Android version</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-bada-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-bada-1"></a></span>bada</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Bada version</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-wp-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-wp-1"></a></span>wp</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Windows Phone version</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-other-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-other-1"></a></span>other</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Undetected platform</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-opera-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-opera-1"></a></span>opera</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Opera version</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-chrome-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-chrome-1"></a></span>chrome</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Chrome version</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-screenSize-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-screenSize-1"></a></span>screenSize</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Screen size, one of: large, normal, small</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-dpr-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-dpr-1"></a></span>dpr</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Device pixel ratio</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-connection-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-connection-1"></a></span>connection</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Connection type, one of: wifi, 3g, 2g</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-flash-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-flash-1"></a></span>flash</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Flash version</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-video-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-video-1"></a></span>video</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Is video supported?</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-svg-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-svg-1"></a></span>svg</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Is SVG supported?</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-width-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-width-1"></a></span>width</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Viewport width</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-height-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-height-1"></a></span>height</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Viewport height</div></div></div><div class="block-jsdoc__method"><div class="block-jsdoc__method-title"><a class="block-jsdoc__anchor" id="jsdoc-landscape-1"></a><span class="block-jsdoc__method-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-landscape-1"></a></span>landscape</span><span class="block-jsdoc__params-list">()</span><span class="block-jsdoc__method-returns"></span><span class="block-jsdoc__method-labels"></span></div><div class="block-jsdoc__description block-jsdoc__desc-section"><div class="block-jsdoc__section-title">description</div><div class="block-jsdoc__section-content">Is landscape oriented?</div></div></div></div></div><div class="block-jsdoc__content-item"><a class="block-jsdoc__anchor" id="jsdoc-ua__dom-1"></a><h1 class="block-jsdoc__block-name"><span class="block-jsdoc__method-href"><a class="link block-anchor link__control i-bem" data-bem='{"link":{}}' role="link" href="#jsdoc-ua__dom-1"></a></span>ua__dom</h1><div class="block-jsdoc__block-description">Use ua module to provide user agent features by modifiers and update some on orient change</div></div></div></div><div class="block-tabs__pane"><ul class="block-sources"><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.bemhtml">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.bemhtml</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.bh.js">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.bh.js</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.deps.js">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.deps.js</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.en.title.txt">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.en.title.txt</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.ru.md">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.ru.md</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.ru.title.txt">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/ua.ru.title.txt</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/__svg/ua__svg.bemhtml">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/__svg/ua__svg.bemhtml</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/__svg/ua__svg.bh.js">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/__svg/ua__svg.bh.js</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/__svg/ua__svg.en.title.txt">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/__svg/ua__svg.en.title.txt</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/__svg/ua__svg.ru.title.txt">https://github.com/bem/bem-core/blob/v2.9.0/common.blocks/ua/__svg/ua__svg.ru.title.txt</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/ua.bemhtml">https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/ua.bemhtml</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/ua.bh.js">https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/ua.bh.js</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/ua.js">https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/ua.js</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/ua.ru.md">https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/ua.ru.md</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/__dom/ua__dom.deps.js">https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/__dom/ua__dom.deps.js</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/__dom/ua__dom.js">https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/__dom/ua__dom.js</a></li><li class="block-sources__item"><a class="link link__link link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/__dom/ua__dom.ru.md">https://github.com/bem/bem-core/blob/v2.9.0/touch.blocks/ua/__dom/ua__dom.ru.md</a></li></ul></div></div></div><div><div></div></div></div><div class="page__side"><aside class="aside page__aside"><div class="aside__group"><ul class="article-tags aside__tags"><li class="article-tags__tag"><a class="article-tags__link">libs</a></li><li class="article-tags__tag"><a class="article-tags__link">bem-core</a></li></ul><div class="social-likes aside__social"><a class="social-likes__service social-likes__service_type_facebook" href="https://www.facebook.com/sharer.php?s=100&amp;url=https%3A%2F%2Fru-test.bem.info%2Flibraries%2Fclassic%2Fbem-core%2F2.9.0%2Ftouch-pad%2Fua%2F&amp;title=ua&amp;image=">Facebook</a> <a class="social-likes__service social-likes__service_type_vk" href="http://vk.com/share.php?&amp;url=https%3A%2F%2Fru-test.bem.info%2Flibraries%2Fclassic%2Fbem-core%2F2.9.0%2Ftouch-pad%2Fua%2F&amp;title=ua&amp;image=">VKontakte</a> <a class="social-likes__service social-likes__service_type_twitter" href="https://twitter.com/share?&amp;url=https%3A%2F%2Fru-test.bem.info%2Flibraries%2Fclassic%2Fbem-core%2F2.9.0%2Ftouch-pad%2Fua%2F&amp;title=ua&amp;image=">Twitter</a></div></div><div class="article-amendments aside__amendments"></div></aside></div><footer class="footer page__foot"><div class="footer__layout"><ul class="footer__community"><li class="footer__channel"><a class="footer__channel-link" href="https://telegram.me/bem_ru">Telegram</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://web-standards.slack.com/messages/bem/">Slack</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://www.facebook.com/groups/bem.info/">Facebook</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://twitter.com/bem_ru/">Twitter</a></li></ul></div></footer><script>(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter16972024 = new Ya.Metrika({"id":"16972024","webvisor":true,"clickmap":true,"trackLinks":true,"accurateTrackBounce":true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/16972024" style="position:absolute; left:-9999px;"></div></noscript><div class="yandex-metrica-api i-bem" data-bem='{"yandex-metrica-api":{"counterId":"16972024"}}'></div><script src="../../../../../../_client/client.js?0459" type="module"></script></body></html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html><html class="ua_js_no" lang="ru"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Живая (ленивая) инициализация / Справочное руководство i-bem.js / Классический БЭМ-стек / Учебные материалы / БЭМ</title><script>(function(e,c){e[c]=e[c].replace(/(ua_js_)no/g,"$1yes");})(document.documentElement,"className");(function(d,n){d.documentElement.className+=" ua_svg_"+(d[n]&&d[n]("http://www.w3.org/2000/svg","svg").createSVGRect?"yes":"no");})(document,"createElementNS");</script><link rel="stylesheet" href="../../../../tutorials.min.css?1810"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="bem-site-root" content="../../../../"><link rel="canonical" href="https://ru-test.bem.info/tutorials/classic/i-bem/live-init/"><link rel="alternate" hreflang="en" href="https://en-test.bem.info/tutorials/classic/i-bem/live-init/"><link rel="alternate" hreflang="ru" href="https://ru-test.bem.info/tutorials/classic/i-bem/live-init/"><meta name="robots" content="noindex"><meta property="og:image" content="../../../../og_image/logo_theme_generated.png"><meta property="og:url" content="../../../../tutorials/classic/i-bem/live-init/"><meta property="og:type" content="article"><meta property="og:description" content="Живая (ленивая) инициализация"><meta property="og:keywords" content="tutorials, classic, i-bem.js"><link rel="shortcut icon" href="../../../../favicon.ico"></head><body class="page"><div class="header page__head i-bem" data-bem='{"header":{}}'><div class="header__layout"><a class="logo header__logo" href="../../../../"><svg class="logo__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101.7 84"><path d="M0 13h23.8v7H0zM0 0h23.8v7H0zm42.7 25.9H0v7h41.1c4.5 0 15 .1 18.9 6.4v-3.9c-1.9-6.2-7.5-9.5-17.3-9.5zm.1 13H0v7h41.1c10 0 16.3.4 18.9 1.8v-3.1c-2-4.9-10.4-5.7-17.2-5.7zm-.1 33H0v-7h41.1c4.5 0 15-.1 18.9-6.4v3.9c-1.9 6.2-7.5 9.5-17.3 9.5zm.1-13H0v-7h41.1c10 0 16.3-.4 18.9-1.8v3.1c-2 4.9-10.4 5.7-17.2 5.7zM70.4 84h31.4v-4.3H71.3c-2.7 0-9.1-.1-11.4-3.8v2.4C61 82 64.4 84 70.4 84zm-.1-7.9h31.4v-4.3H71.3c-6.1 0-9.9-.2-11.4-1.1v1.9c1.2 3 6.3 3.5 10.4 3.5z"/></svg></a><div class="lang-switcher header__lang"><a class="lang-switcher__link" href="https://en-test.bem.info/tutorials/classic/i-bem/live-init/">EN</a><span class="lang-switcher__separator"> </span>RU</div><a class="header__forum" href="https://github.com/bem-site/bem.info/issues">Issues</a></div><div class="search header__search i-bem" data-bem='{"search":{}}'><div class="search__form"><span class="input input_type_search i-bem" data-bem='{"input":{}}'><span class="input__box"><input class="input__control" name="q" placeholder="Поиск по сайту" autocomplete="off" type="search"></span></span><span class="search__submit" role="button" aria-label="search"><div class="search-icon search__submit-icon"><svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="6"/><path d="M11 11l5 5"/></svg></div></span><div class="search__results" role="listbox"></div></div></div><ul class="breadcrumbs header__breadcrumbs"><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../tutorials/">Учебные материалы</a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../tutorials/classic/">Классический БЭМ-стек</a></li></ul><div class="header__toggle"><span class="header__toggle-line"></span></div></div><div class="sitemap page__sitemap"><div class="sitemap__section sitemap__section_site_methodology"><h1 class="sitemap__title sitemap__title_site_methodology"><a class="sitemap__link" href="../../../../methodology/">Методология</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/quick-start/">Быстрый старт</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/key-concepts/">Основные понятия</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/naming-convention/">Соглашение по именованию</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/css/">CSS</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/html/">HTML</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/js/">JavaScript</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/filestructure/">Файловая структура</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/redefinition-levels/">Уровни переопределения</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/block-modification/">Модификация блока</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/build/">Сборка</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/declarations/">Декларации</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/solved-problems/">Какие проблемы решает</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/history/">История создания</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/articles/">Статьи</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/faq/">FAQ</a></li></ul></div><div class="sitemap__section sitemap__section_site_technologies"><h1 class="sitemap__title sitemap__title_site_technologies"><a class="sitemap__link" href="../../../../technologies/">Технологии</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../technologies/classic/">Классический БЭМ-стек</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/bemjson/">Данные (BEMJSON)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/bem-xjst/">Шаблоны (BEMHTML, BEMTREE)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/i-bem/">Клиентский JavaScript (i-bem.js)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/deps/">Зависимости</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/deps-spec/">Спецификация DEPS</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/project-stub/">Заготовка проекта</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../technologies/bem-react/">bem-react</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/motivation/">Зачем БЭМ, если есть React?</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/quick-start/">Быстрый старт</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/structure/">Структура компонента</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/lazy/">Ленивые модификаторы</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/classname/">classname</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/classnames/">classnames</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/core/">core</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/di/">di</a></li></ul></div><div class="sitemap__section sitemap__section_site_toolbox"><h1 class="sitemap__title sitemap__title_site_toolbox"><a class="sitemap__link" href="../../../../toolbox/">Инструментарий</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/enb/">ENB</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/api/">API</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/techs/">Технологии для работы с файлами</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/cli/">Использование из командной строки</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/terms/">Терминология</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/build-project/">Как собрать проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/write-tech/">Как написать технологию</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/express/">Автоматизация с помощью express</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/packages/">Пакеты ENB</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/bemhint/">bemhint</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/bemhint/css-naming/">CSS именование</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/bemhint/fs-naming/">Именование файлов</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/bemhint/deps-schema/">DEPS схема</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/bemhint/deps-specification/">DEPS спецификация</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/bem-tools/">bem-tools</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/bemmet/">bemmet</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/sdk/">SDK</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-walk/">@bem/sdk.walk</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-config/">@bem/sdk.config</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-naming-entity/">@bem/sdk.naming.entity </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-naming-cell-stringify/">@bem/sdk.naming.cell.stringify </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-naming-cell-pattern-parser/">@bem/sdk.naming.cell.pattern-parser</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-naming-file-stringify/">@bem/sdk.naming.file.stringify</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-decl/">@bem/sdk.decl </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-bemjson-to-decl/">@bem/sdk.bemjson-to-decl</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-bemjson-to-jsx/">@bem/sdk.bemjson-to-jsx</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-import-notation/">@bem/sdk.import-notation</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-graph/">@bem/sdk.graph</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-deps/">@bem/sdk.deps</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-entity-name/">@bem/sdk.entity-name</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-file/">@bem/sdk.file</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-cell/">@bem/sdk.cell</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-bundle/">@bem/sdk.bundle</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-bemjson-node/">@bem/sdk.bemjson-node</a></li></ul></div><div class="sitemap__section sitemap__section_site_libraries"><h1 class="sitemap__title sitemap__title_site_libraries"><a class="sitemap__link" href="../../../../libraries/">Библиотеки</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../libraries/classic/">Классические БЭМ-библиотеки</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../libraries/classic/bem-core/">bem-core</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../libraries/classic/bem-components/">bem-components</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../libraries/classic/bem-history/">bem-history</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../libraries/classic/principles/">Принципы разработки БЭМ-библиотек</a></li></ul></div><div class="sitemap__section sitemap__section_site_tutorials"><h1 class="sitemap__title sitemap__title_site_tutorials"><a class="sitemap__link" href="../../../../tutorials/">Учебные материалы</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../tutorials/classic/">Классический БЭМ-стек</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/quick-start-static/">Собираем статическую страницу</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/start-with-project-stub/">Создаём статический БЭМ-проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/start-with-bem-express/">Создаём динамический БЭМ-проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/i-bem/">Справочное руководство i-bem.js</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/dist-quick-start/">Dist bem-components: подключаем блоки на страницу</a></li></ul></div></div><div class="page__menu"><ul class="nav page__nav"><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/quick-start-static/">Собираем статическую страницу</a></div><div class="nav__content" style="margin-left:16px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#описание-урока">Описание урока</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#клонируем-бэм-проект">Клонируем БЭМ-проект</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#создаем-страницу">Создаем страницу</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#создаем-блоки">Создаем блоки</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#результат">Результат</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/start-with-project-stub/">Создаём статический БЭМ-проект</a></div><div class="nav__content" style="margin-left:16px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#зависимости">Зависимости</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#создание-проекта">Создание проекта</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#структура-проекта">Структура проекта</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#шаг-за-шагом">Шаг за шагом</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#внесение-изменений-в-страницы">Внесение изменений в страницы</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#bemhtml-шаблоны">BEMHTML-шаблоны</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#зависимости-блоков">Зависимости блоков</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#подключение-библиотек">Подключение библиотек</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#миксы-блоков-и-элементов">Миксы блоков и элементов</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#декларативный-javascript">Декларативный JavaScript</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#создание-новых-страниц">Создание новых страниц</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#полная-сборка-проекта">Полная сборка проекта</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#подведем-итоги">Подведем итоги</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/start-with-bem-express/">Создаём динамический БЭМ-проект</a></div><div class="nav__content" style="margin-left:16px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-bem-express/#введение">Введение</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-bem-express/#приложение-hello-world">Приложение Hello, World</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-bem-express/#приложение-social-services-search-robot">Приложение Social Services Search Robot</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/i-bem/">Справочное руководство i-bem.js</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:32px"><a class="nav__link" href="../../../../tutorials/classic/i-bem/block/">Описание структуры блока</a></div><div class="nav__content" style="margin-left:32px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/block/#блок-с-javascript-функциональностью">Блок с JavaScript функциональностью</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/block/#простой-пример-с-consolelog">Простой пример с console.log</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:32px"><a class="nav__link" href="../../../../tutorials/classic/i-bem/modifiers/">Модификаторы блока</a></div><div class="nav__content" style="margin-left:32px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#установка-модификатора-на-блок-и-реакция-на-это">Установка модификатора на блок и реакция на это</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#установка-модификатора-для-элемента">Установка модификатора для элемента</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#переключение-toggle-модификатора">Переключение (toggle) модификатора</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#удаление-модификатора">Удаление модификатора</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#до-установки-модификатора">До установки модификатора</a></div></li><li class="nav__item nav__item_current"><div class="nav__title" style="margin-left:32px">Живая (ленивая) инициализация</div><div class="nav__content nav__content_visible" style="margin-left:32px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#статические-свойства-lazyinit-и-oninit">Статические свойства lazyInit и onInit</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#инициализация-блока-по-dom-событию">Инициализация блока по DOM-событию</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#делегированная-инициализация">Делегированная инициализация</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#обработчики-событий-ленивой-инициализации">Обработчики событий ленивой инициализации</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#инициализация-по-нескольким-событиям">Инициализация по нескольким событиям</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#бэм-события">БЭМ-события</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/dist-quick-start/">Dist bem-components: подключаем блоки на страницу</a></div><div class="nav__content" style="margin-left:16px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/dist-quick-start/#описание-урока">Описание урока</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/dist-quick-start/#подключение-библиотеки">Подключение библиотеки</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/dist-quick-start/#работа-с-блоками">Работа с блоками</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/dist-quick-start/#результат">Результат</a></div></li></ul></div><div class="page__main"><div class="article page__content"><h1 class="article__heading article__heading_level_1" id="живая-ленивая-инициализация"><a class="article__heading-anchor" href="#живая-ленивая-инициализация"></a>Живая (ленивая) инициализация</h1><p class="article__paragraph">Перед началом работы блок инициализируется ядром. В конце этого процесса блок
+получает модификатор <code class="article__inline-code">js_inited</code>, о котором вы уже знаете.</p><p class="article__paragraph">В процессе инициализации возникает JavaScript-объект, соответствующий экземпляру
+блока. Затем запускается callback модификатора <code class="article__inline-code">js_inited</code> со всеми инициирующими
+действиями.</p><p class="article__paragraph">В предыдущих примерах все блоки инициализировались по <code class="article__inline-code">domReady</code>. Хотя на
+страницах со множеством блоков нет никакой нужды инициализировать всё сразу.</p><p class="article__paragraph">Иногда пользователь загружает страницу только чтобы нажать на ней
+одну-единственную кнопку. Так что лучше сэкономить на вычислениях и памяти
+браузера, проинициализировав компонент только когда пользователь начал с ним
+работать.</p><p class="article__paragraph">Это называется «живая» или «ленивая» инициализация.</p><h2 class="article__heading article__heading_level_2" id="статические-свойства-lazyinit-и-oninit"><a class="article__heading-anchor" href="#статические-свойства-lazyinit-и-oninit"></a>Статические свойства lazyInit и onInit</h2><p class="article__paragraph">Инструкции по ленивой инициализации блока даются в статических свойствах
+<code class="article__inline-code">lazyInit</code> и <code class="article__inline-code">onInit</code>.</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'my-block'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        ...
+    },
+    ...
+}, {
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">// Здесь можно сказать, когда инициализировать экземпляр блока</span>
+    }
+}));
+
+});
+</pre><p class="article__paragraph">В предыдущих примерах вообще не было статических методов. Это рассматривалось
+как то, что свойство <code class="article__inline-code">lazyInit</code> имеет значение <code class="article__inline-code">false</code>.</p><p class="article__paragraph">А в данном примере <code class="article__inline-code">lazyInit: true</code> говорит ядру, что блок не нужно сразу
+инициализировать. В <code class="article__inline-code">onInit</code> можно подписаться на условия, которые создадут
+экземпляр блока: например, на DOM-событие блока или элемента.</p><h2 class="article__heading article__heading_level_2" id="инициализация-блока-по-dom-событию"><a class="article__heading-anchor" href="#инициализация-блока-по-dom-событию"></a>Инициализация блока по DOM-событию</h2><pre class="article__code">pure.bundles/
+    010-live-init-on-event/
+        blocks/
+            text/
+                translate/
+                    translate.bemhtml.js
+                    translate.css
+                    translate.js
+        010-live-init-on-event.bemjson.js
+        010-live-init-on-event.html
+</pre><p class="article__paragraph">На странице
+<a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/010-live-init-on-event/010-live-init-on-event.html" target="_blank" rel="noopener noreferrer">010-live-init-on-event.html</a>
+(<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/010-live-init-on-event/010-live-init-on-event.bemjson.js" target="_blank" rel="noopener noreferrer">BEMJSON</a>)
+вы можете увидеть историю, написанную на голландском языке. На самом деле текст
+разделен на множество маленьких кусочков по фразам. Каждая фраза завернута в
+блок <code class="article__inline-code">translate</code>.</p><p class="article__paragraph">Если пользователь, читающий текст, не понимает его значения, он может увидеть
+перевод, кликнув по нужной фразе.</p><pre class="article__code"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>
+    <span class="hljs-attr">class</span>=<span class="hljs-string">"translate i-bem"</span>
+    <span class="hljs-attr">data-bem</span>=<span class="hljs-string">"{'translate':{'prompt':'один мужчина заходит на почту;'}}"</span>&gt;</span>
+    Een man gaat een postkantor binnen
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"translate__prompt"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</pre><p class="article__paragraph">Как видно из HTML-структуры, блок <code class="article__inline-code">translate</code> содержит фразу на голландском
+языке, а ее русский перевод хранится как параметр блока в атрибуте <code class="article__inline-code">data-bem</code>.
+Также есть элемент <code class="article__inline-code">prompt</code>, которого не видно, пока он не понадобится.</p><p class="article__paragraph">Обратите внимание, что у блока нет класса <code class="article__inline-code">translate_js_inited</code>, он не
+появляется даже при полной загрузке страницы. Это означает, что и
+JavaScript-объект, соответствующий экземпляру блока, пока не создан.</p><p class="article__paragraph">В файле
+<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/010-live-init-on-event/blocks/translate/translate.js" target="_blank" rel="noopener noreferrer">translate.js</a>
+сказано, что блок нужно инициализировать тогда, когда на его DOM-узле случится
+событие <code class="article__inline-code">click</code>.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'translate'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    ...
+},{
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>().<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {});
+    }
+}));
+
+});
+</pre><p class="article__paragraph">По клику ядро устанавливает для блока модификатор <code class="article__inline-code">js_inited</code> и запускает
+конструктор&nbsp;— функцию, проассоциированную с этим модификатором.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'translate'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-keyword">var</span> prompt = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(<span class="hljs-string">'prompt'</span>);
+                prompt.<span class="hljs-property">domElem</span>.<span class="hljs-title function_">text</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">params</span>.<span class="hljs-property">prompt</span>);
+                prompt.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'visible'</span>, <span class="hljs-literal">true</span>);
+            }
+        }
+    }
+},{
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>().<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {});
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Вложенному элементу <code class="article__inline-code">prompt</code> назначается модификатор <code class="article__inline-code">visible</code> со значением
+<code class="article__inline-code">true</code>, что делает его видимым на странице. Также это означает, что из
+параметров блока берётся перевод&nbsp;— свойство <code class="article__inline-code">this.params.prompt</code>&nbsp;— и
+вставляется внутрь элемента.</p><p class="article__paragraph">На самом деле текст перевода можно было и раньше вставить в элемент, ведь он не
+был виден пользователю. Но для демонстрации того, как получать параметры из
+<code class="article__inline-code">data-bem</code>, выбран этот вариант.</p><p class="article__paragraph">Возвращаясь к живой инициализации вы можете увидеть, что на странице со
+множеством блоков ядро инициализирует только те, на которых произошло слушаемое
+событие. Это экономит память и страница работает быстрее.</p><p class="article__paragraph">В основе лежит
+<a class="article__link" href="https://davidwalsh.name/event-delegate" target="_blank" rel="noopener noreferrer">делегирование событий</a>. То есть, несмотря
+на то, что блоков много, есть всего один обработчик события <code class="article__inline-code">click</code> на объекте
+<code class="article__inline-code">document</code>.</p><p class="article__paragraph">Это не только выгодно с точки зрения производительности, но и добавляет гибкости
+для программирования динамически изменяемых страниц. В этом вы можете убедиться
+на следующем примере.</p><h2 class="article__heading article__heading_level_2" id="делегированная-инициализация"><a class="article__heading-anchor" href="#делегированная-инициализация"></a>Делегированная инициализация</h2><p class="article__paragraph"><a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/010_2-delegation/010_2-delegation.html" target="_blank" rel="noopener noreferrer">010_2-delegation.html</a></p><p class="article__paragraph">В этом примере используется блок <code class="article__inline-code">translate</code>&nbsp;— тот же самый, что и в предыдущем.
+Но кроме этого там есть страшный JavaScript. Он срабатывает, если пользователь
+нажал на розовую кнопку и динамически вставляет в страницу несколько новых
+блоков <code class="article__inline-code">translate</code>. Если после этого вы кликните на некоторые фразы свежей
+шутки, то увидите, что эти блоки работают абсолютно так же, как и те, что
+присутствовали на странице с самого начала.</p><p class="article__paragraph">Ядро фреймворка i-bem слушает события на объекте <code class="article__inline-code">document</code>. Когда пользователь
+кликает по блокам, событие поднимается наверх до <code class="article__inline-code">document</code>, и ядро инициализирует
+блок, следуя инструкциям из <code class="article__inline-code">onInit</code>.</p><h2 class="article__heading article__heading_level_2" id="обработчики-событий-ленивой-инициализации"><a class="article__heading-anchor" href="#обработчики-событий-ленивой-инициализации"></a>Обработчики событий ленивой инициализации</h2><pre class="article__code">pure.bundles/
+    011-live-bind-to/
+        blocks/
+            button/
+                button.bemhtml.js
+                button.css
+                button.js
+            page/
+        011-live-bind-to.bemjson.js
+        011-live-bind-to.html
+</pre><p class="article__paragraph">Следующий пример&nbsp;— <a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/011-live-bind-to/011-live-bind-to.html" target="_blank" rel="noopener noreferrer">страница со 100 BonBon
+кнопками</a>
+(<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/011-live-bind-to/011-live-bind-to.bemjson.js" target="_blank" rel="noopener noreferrer">BEMJSON</a>)
+— показывает, что реагировать на события ленивой инициализации можно всегда, а
+не только при инициализации.</p><p class="article__paragraph">У представленного на странице блока <code class="article__inline-code">button</code> есть ленивая инициализация. Было бы
+неразумно инициализировать их все сразу, и на каждом слушать событие <code class="article__inline-code">click</code>.</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'button'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-keyword">var</span> button = <span class="hljs-variable language_">this</span>.<span class="hljs-property">domElem</span>[<span class="hljs-number">0</span>].<span class="hljs-property">innerHTML</span>;
+
+                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'Here an object of '</span> + button + <span class="hljs-string">' comes. Just once.'</span>);
+            }
+        }
+    },
+    <span class="hljs-attr">_onClick</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'Here I can track clicks'</span>);
+    }
+},{
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>().<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onClick</span>);
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Так же как и в предыдущем примере, этот код
+инициализирует блок и запускает callback модификатора <code class="article__inline-code">js_inited</code>.</p><p class="article__paragraph">Разница состоит в том, что <code class="article__inline-code">_domEvents().on()</code> запускает callback не только при
+инициализации, а каждый раз когда пользователь кликает по кнопке.</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'button'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        ...
+    },
+    <span class="hljs-attr">_onClick</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'Here I can track clicks'</span>);
+    }
+},{
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>().<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onClick</span>);
+    }
+}));
+
+});
+</pre><h2 class="article__heading article__heading_level_2" id="инициализация-по-нескольким-событиям"><a class="article__heading-anchor" href="#инициализация-по-нескольким-событиям"></a>Инициализация по нескольким событиям</h2><pre class="article__code">pure.bundles/
+    012-live-init-many-events/
+        blocks/
+            checkbox/
+                checkbox.bemhtml.js
+                checkbox.css
+                checkbox.js
+            page/
+        012-live-init-many-events.bemjson.js
+        012-live-init-many-events.html
+</pre><p class="article__paragraph">В предыдущих примерах инициализация блоков проходила по возникновению на них
+события <code class="article__inline-code">click</code>. Но иногда слушать одно-единственное событие недостаточно.
+Пример
+<a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/012-live-init-many-events/012-live-init-many-events.html" target="_blank" rel="noopener noreferrer">012-live-init-many-events</a>
+(<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/012-live-init-many-events/012-live-init-many-events.bemjson.js" target="_blank" rel="noopener noreferrer">BEMJSON</a>)
+демонстрирует такой случай на кастомизированном checkbox.</p><pre class="article__code"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>
+    <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox i-bem"</span>
+    <span class="hljs-attr">data-bem</span>=<span class="hljs-string">"{'checkbox':{}}"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox__control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"remember1"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"on"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"remember1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</pre><p class="article__paragraph">Очевидно, что экземпляр блока должен быть инициализирован, когда пользователь
+кликает по элементу <code class="article__inline-code">label</code>.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'checkbox'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    ...
+    _onClick : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'focused'</span>, <span class="hljs-literal">true</span>);
+    },
+    ...
+},{
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'label'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onClick</span>);
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Здесь тоже используется метод <code class="article__inline-code">_domEvents().on()</code>, чтобы не только проинициализировать
+блок, но и запускать callback на следующих кликах. Заметьте, что здесь
+использован опциональный параметр с именем элемента <code class="article__inline-code">label</code>, т.к. нас интересуют
+клики именно на нём.</p><p class="article__paragraph">Кроме того, контрол может быть изменен с клавиатуры (или другим JavaScript), и
+это тоже нужно учесть.</p><p class="article__paragraph">Внутри метода <code class="article__inline-code">onInit</code> можно поместить столько инструкций по инициализации,
+сколько нужно для данного блока. Здесь она случается по клику на элементе
+<code class="article__inline-code">label</code> и по событию <code class="article__inline-code">change</code> элемента <code class="article__inline-code">control</code> (это узел <code class="article__inline-code">input</code>).</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'checkbox'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    ...
+    _onClick : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'focused'</span>, <span class="hljs-literal">true</span>);
+    },
+    _onChange : <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'checked'</span>, e.<span class="hljs-property">target</span>.<span class="hljs-property">checked</span>);
+    }
+},{
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'label'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onClick</span>);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'control'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'change'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onChange</span>);
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Также блок должен быть проинициализирован, если он оказывается в фокусе и если
+фокус уходит из него.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'checkbox'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    ...
+},{
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'label'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onClick</span>);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'control'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'change'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onChange</span>);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'control'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'focusin focusout'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onFocusChange</span>);
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Как видно из кода, один и тот же callback можно привязать к нескольким событиям.
+Для этого имена событий пишутся через пробел.</p><p class="article__paragraph">После добавления функций callback на модификаторы, программирование блока закончено.</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'checkbox'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'focused'</span> : {
+            <span class="hljs-string">'true'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(<span class="hljs-string">'control'</span>).<span class="hljs-property">domElem</span>.<span class="hljs-title function_">focus</span>();
+            },
+            <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(<span class="hljs-string">'control'</span>).<span class="hljs-property">domElem</span>.<span class="hljs-title function_">blur</span>();
+            }
+        },
+        <span class="hljs-string">'checked'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params">modName, modVal</span>) {
+            <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(<span class="hljs-string">'control'</span>).<span class="hljs-property">domElem</span>.<span class="hljs-title function_">attr</span>(<span class="hljs-string">'checked'</span>, modVal ? <span class="hljs-string">'checked'</span> : <span class="hljs-literal">false</span>);
+        }
+    },
+    ...
+},{
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        ...
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Такой подход позволяет описать компонент консистентно. Вне зависимости от того,
+как начнет использоваться блок&nbsp;— взаимодействуя с пользователем, или из другого
+JavaScript страницы, или реагируя на события в браузере&nbsp;— он будет работать как
+задумано.</p><p class="article__paragraph">Получив модификатор <code class="article__inline-code">focused</code>, блок установит фокус на встроенном в него <code class="article__inline-code">input</code>.
+И наоборот&nbsp;— увидев, что встроенный <code class="article__inline-code">input</code> по каким-то причинам получил фокус, блок
+установит себе модификатор <code class="article__inline-code">focused</code> и таким образом приобретет нужный внешний вид.</p><p class="article__paragraph">При изменении блока&nbsp;— и вручную, и автоматически&nbsp;— блок получит модификатор
+<code class="article__inline-code">checked</code> и задаст атрибут <code class="article__inline-code">checked</code> встроенному <code class="article__inline-code">input</code> или снимет их.</p><h3 class="article__heading article__heading_level_3" id="почему-не-checked"><a class="article__heading-anchor" href="#почему-не-checked"></a>Почему не :checked?</h3><p class="article__paragraph">Как вы могли заметить, в этом примере выделенность встроенного элемента <code class="article__inline-code">control</code>
+(input) проверяется при помощи модификатора <code class="article__inline-code">checked</code> соответствующего блока.</p><pre class="article__code article__code_correctHeight"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>
+    <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox i-bem checkbox_js_inited checkbox_checked"</span>
+    <span class="hljs-attr">data-bem</span>=<span class="hljs-string">"{'checkbox':{}}"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+        <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox__control"</span>
+        <span class="hljs-attr">id</span>=<span class="hljs-string">"remember2"</span>
+        <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span>
+        <span class="hljs-attr">value</span>=<span class="hljs-string">"on"</span>
+        <span class="hljs-attr">checked</span>=<span class="hljs-string">"checked"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"remember2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</pre><pre class="article__code article__code_correctHeight"><span class="hljs-selector-class">.checkbox_checked</span> <span class="hljs-selector-class">.checkbox__label</span> {
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">54px</span>;
+}
+
+<span class="hljs-selector-class">.checkbox_checked</span> <span class="hljs-selector-class">.checkbox__label</span><span class="hljs-selector-pseudo">:after</span> {
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#00bf00</span>;
+}
+</pre><p class="article__paragraph">Конечно можно было бы воспользоваться псевдо-селектором <code class="article__inline-code">:checked</code> как это
+сделано здесь: <a class="article__link" href="https://codepen.io/bbodine1/pen/novBm" target="_blank" rel="noopener noreferrer">control prototype</a>.</p><pre class="article__code article__code_correctHeight"><span class="hljs-selector-class">.checkbox</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span><span class="hljs-selector-pseudo">:checked</span> + <span class="hljs-selector-tag">label</span> {
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">54px</span>;
+}
+
+<span class="hljs-selector-class">.checkbox</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span><span class="hljs-selector-pseudo">:checked</span> + <span class="hljs-selector-tag">label</span><span class="hljs-selector-pseudo">:after</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#00bf00</span>;
+}
+</pre><p class="article__paragraph">Но использование модификаторов более гибкое, и позволяет всему блоку менять
+внешний вид при выделении.</p><pre class="article__code article__code_correctHeight"><span class="hljs-selector-class">.checkbox_checked</span>
+{
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">0deg</span>, <span class="hljs-number">#333</span>, <span class="hljs-number">#333</span> <span class="hljs-number">4px</span>, <span class="hljs-number">#555</span> <span class="hljs-number">4px</span>, <span class="hljs-number">#555</span> <span class="hljs-number">6px</span>);
+    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">6px</span> <span class="hljs-number">6px</span>;
+}
+</pre><p class="article__paragraph">И, конечно, позволяет экономить на парсинге селекторов, и делает код более
+консистентным.</p><h2 class="article__heading article__heading_level_2" id="бэм-события"><a class="article__heading-anchor" href="#бэм-события"></a>БЭМ-события</h2><p class="article__paragraph">Кроме DOM-событий i-bem.js умеет работать с кастомными JavaScript событиями
+на объектах, соответствующих блокам. Эти события назваются БЭМ-события и
+обычно составляют API блока.</p><p class="article__paragraph">Примером порождения таких событий может быть
+<a class="article__link" href="https://github.com/bem/bem-components/tree/v3/common.blocks/link" target="_blank" rel="noopener noreferrer">блок <code class="article__inline-code">link</code></a>
+библиотеки <a class="article__link" href="../../../../libs/bem-components/">bem-components</a>.</p><p class="article__paragraph">На JavaScript-объекте, соответствующем блоку, возникает кастомное событие <code class="article__inline-code">click</code> в
+том случае, если пользователь кликает по ссылке левой кнопкой, и ссылка не является
+неактивной в данный момент.</p><p class="article__paragraph">Запускается это событие при помощи метода <code class="article__inline-code">_emit</code>.</p><pre class="article__code">  _onClick : <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) {
+      e.<span class="hljs-title function_">preventDefault</span>();
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">hasMod</span>(<span class="hljs-string">'disabled'</span>) || <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_emit</span>(<span class="hljs-string">'click'</span>);
+  }
+</pre><p class="article__paragraph">Таким образом, блок <code class="article__inline-code">link</code> получает API, и им может воспользоваться любой другой
+блок страницы.</p><p class="article__paragraph">Другим примером может служить <a class="article__link" href="https://github.com/bem/bem-js-tutorial/tree/master/desktop.blocks/menu" target="_blank" rel="noopener noreferrer">блок
+<code class="article__inline-code">menu</code></a>.
+Он представляет список пунктов меню в HTML, один из которых может быть выделен.</p><pre class="article__code article__code_correctHeight"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu i-bem"</span> <span class="hljs-attr">data-bem</span>=<span class="hljs-string">"{<span class="hljs-symbol">&amp;quot;</span>menu<span class="hljs-symbol">&amp;quot;</span>:{}}"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu__layout"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu__layout-unit menu__layout-unit_position_first"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu__item menu__item_state_current"</span>&gt;</span>
+        Item 1
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu__layout-unit"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu__item menu__item_state_current"</span>&gt;</span>
+        Item 2
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu__layout-unit"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"menu__item menu__item_state_current"</span>&gt;</span>
+        Item 3
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</pre><p class="article__paragraph">Блок слушает DOM-события <code class="article__inline-code">click</code> на своих элементах <code class="article__inline-code">item-selector</code> и запускает
+событие <code class="article__inline-code">current</code>, сигнализирующее о смене выделенного пункта меню и дающее
+данные о текущем пункте.</p><pre class="article__code article__code_correctHeight">prev &amp;&amp; prev !== <span class="hljs-variable language_">this</span> &amp;&amp; prev.<span class="hljs-title function_">delMod</span>(<span class="hljs-string">'state'</span>);
+menu.<span class="hljs-title function_">_emit</span>(<span class="hljs-string">'current'</span>, {
+    prev    : prev,
+    current : <span class="hljs-variable language_">this</span>
+});
+</pre><p class="article__paragraph">Это событие возникает на JavaScript-объекте, соответствующем экземпляру блока.
+Используя это, другой блок может подписаться на БЭМ-событие <code class="article__inline-code">current</code> блока
+<code class="article__inline-code">menu</code>, узнавать об изменении текущего пункта меню и реагировать на это.</p><h3 class="article__heading article__heading_level_3" id="ленивая-инициализация-по-бэм-событию-вложенного-блока"><a class="article__heading-anchor" href="#ленивая-инициализация-по-бэм-событию-вложенного-блока"></a>Ленивая инициализация по БЭМ-событию вложенного блока</h3><pre class="article__code">components.bundles/
+    014-live-init-bem-event/
+        blocks/
+            map-marks/
+                map-marks.bemhtml.js
+                map-marks.css
+                map-marks.js
+            map/
+                map.bemhtml.js
+                map.deps.js
+                map.js
+            menu/
+                menu.css
+            page/
+        014-live-init-bem-event.bemjson.js
+        014-live-init-bem-event.html
+</pre><p class="article__paragraph">На этом примере вы можете видеть <a class="article__link" href="https://github.com/varya/bem-js-tutorial/tree/master/components.bundles/014-live-init-bem-event/blocks/map-marks" target="_blank" rel="noopener noreferrer">блок
+<code class="article__inline-code">map-marks</code></a>.
+Он связывает вместе блоки меню и карты таким образом, что пользователь кликающий
+по меню, может видеть соответствуюшую точку на карте.</p><p class="article__paragraph">Блок <code class="article__inline-code">map-marks</code> содержит блок <code class="article__inline-code">menu</code> и <code class="article__inline-code">map</code>. Это можно увидеть из <a class="article__link" href="https://github.com/varya/bem-js-tutorial/blob/master/components.bundles/014-live-init-bem-event/014-live-init-bem-event.bemjson.js" target="_blank" rel="noopener noreferrer">bemjson описания
+страницы</a>
+или заглянув в HTML
+<a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/components.bundles/014-live-init-bem-event/014-live-init-bem-event.html" target="_blank" rel="noopener noreferrer">014-live-init-bem-event.html</a>.</p><p class="article__paragraph">Этот блок нужен только при взаимодействии пользователя со страницей. Поэтому
+блок использует ленивую инициализацию: экземпляр создаётся только тогда, когда
+на вложенном в него блоке <code class="article__inline-code">menu</code> возникает событие <code class="article__inline-code">current</code>.</p><p class="article__paragraph">JavaScript реализация блока
+<a class="article__link" href="https://github.com/varya/bem-js-tutorial/blob/master/components.bundles/014-live-init-bem-event/blocks/map-marks/map-marks.js" target="_blank" rel="noopener noreferrer">map-marks.js</a>
+использует подписку на БЭМ-событие вложенного блока из статического метода
+<code class="article__inline-code">onInit</code>.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'map-marks'</span>, [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'map'</span>, <span class="hljs-string">'menu'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, <span class="hljs-built_in">Map</span>, Menu</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">_onMenuCurrent</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">e, data</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_showMap</span>(data.<span class="hljs-property">current</span>);
+    }
+}, {
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_events</span>(<span class="hljs-title class_">Menu</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'current'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onMenuCurrent</span>);
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Методу <code class="article__inline-code">_events(Menu).on()</code> передаются имя события и callback.
+Так как подписка выполнена из класса блока, обработчик сначала инициализирует
+ближайший экземпляр <code class="article__inline-code">map-marks</code>, внутри которого произошло событие, а затем
+вызывает callback в контексте этого экземпляра.</p><p class="article__paragraph">Как только пользователь кликает по какому-нибудь пункту меню, он становится
+активным, и на блоке <code class="article__inline-code">menu</code> возникает событие <code class="article__inline-code">current</code>. Событие ловится блоком
+<code class="article__inline-code">map-marks</code>, и блок инициализируется. То есть блок приобретает модификатор
+<code class="article__inline-code">js_inited</code>, и запускается соответствующий callback:</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'map-marks'</span>, [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'map'</span>, <span class="hljs-string">'menu'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, <span class="hljs-built_in">Map</span>, Menu</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+
+  <span class="hljs-attr">onSetMod</span>: {
+      <span class="hljs-string">'js'</span> : {
+          <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+              <span class="hljs-variable language_">this</span>.<span class="hljs-property">_menu</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findChildBlock</span>(<span class="hljs-title class_">Menu</span>);
+              <span class="hljs-variable language_">this</span>.<span class="hljs-property">_map</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">findChildBlock</span>(<span class="hljs-title class_">Map</span>);
+          }
+      }
+  },
+
+  ...
+
+}, {
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_events</span>(<span class="hljs-title class_">Menu</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'current'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onMenuCurrent</span>);
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Затем вызывается метод <code class="article__inline-code">_showMap</code> экземпляра блока. Он показывает точку на карте,
+обращаясь к блоку <code class="article__inline-code">map</code>.</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'map-marks'</span>, [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'map'</span>, <span class="hljs-string">'menu'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, <span class="hljs-built_in">Map</span>, Menu</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+
+    ...
+
+    <span class="hljs-attr">_showMap</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">elem</span>) {
+        <span class="hljs-keyword">var</span> params = elem.<span class="hljs-property">params</span>;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">_map</span>.<span class="hljs-title function_">showAddress</span>(params[<span class="hljs-string">'address'</span>]);
+    }
+
+    ...
+
+}, {
+    <span class="hljs-attr">lazyInit</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-attr">onInit</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_events</span>(<span class="hljs-title class_">Menu</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'current'</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">_onMenuCurrent</span>);
+    }
+}));
+
+});
+</pre></div><ul class="article-rewind article-rewind_type_static article-rewind_lang_ru article__rewind"><li class="article-rewind__prev"><a class="article-rewind__prev-link" href="../../../../tutorials/classic/i-bem/modifiers/">Модификаторы блока</a></li></ul></div><div class="page__side"><aside class="aside page__aside"><div class="aside__group"><ul class="article-tags aside__tags"><li class="article-tags__tag"><a class="article-tags__link">tutorials</a></li><li class="article-tags__tag"><a class="article-tags__link">classic</a></li><li class="article-tags__tag"><a class="article-tags__link">i-bem.js</a></li></ul><div class="social-likes aside__social"><a class="social-likes__service social-likes__service_type_facebook" href="https://www.facebook.com/sharer.php?s=100&amp;url=https%3A%2F%2Fru-test.bem.info%2Ftutorials%2Fclassic%2Fi-bem%2Flive-init%2F&amp;title=%D0%96%D0%B8%D0%B2%D0%B0%D1%8F%20(%D0%BB%D0%B5%D0%BD%D0%B8%D0%B2%D0%B0%D1%8F)%20%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F&amp;image=">Facebook</a> <a class="social-likes__service social-likes__service_type_vk" href="http://vk.com/share.php?&amp;url=https%3A%2F%2Fru-test.bem.info%2Ftutorials%2Fclassic%2Fi-bem%2Flive-init%2F&amp;title=%D0%96%D0%B8%D0%B2%D0%B0%D1%8F%20(%D0%BB%D0%B5%D0%BD%D0%B8%D0%B2%D0%B0%D1%8F)%20%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F&amp;image=">VKontakte</a> <a class="social-likes__service social-likes__service_type_twitter" href="https://twitter.com/share?&amp;url=https%3A%2F%2Fru-test.bem.info%2Ftutorials%2Fclassic%2Fi-bem%2Flive-init%2F&amp;title=%D0%96%D0%B8%D0%B2%D0%B0%D1%8F%20(%D0%BB%D0%B5%D0%BD%D0%B8%D0%B2%D0%B0%D1%8F)%20%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F&amp;image=">Twitter</a></div></div><div class="article-amendments aside__amendments"><a class="article-amendments__edit article-amendments__link" href="http://prose.io/#bem-site/bem-js-tutorial/blob/master/03-Live-initialization/03-Live-initialization.ru.md">Редактировать</a><a class="article-amendments__issue article-amendments__link" href="https://github.com/bem-site/bem-js-tutorial/issues/new">Сообщить об ошибке</a></div></aside></div><footer class="footer page__foot"><div class="footer__layout"><ul class="footer__community"><li class="footer__channel"><a class="footer__channel-link" href="https://telegram.me/bem_ru">Telegram</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://web-standards.slack.com/messages/bem/">Slack</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://www.facebook.com/groups/bem.info/">Facebook</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://twitter.com/bem_ru/">Twitter</a></li></ul></div></footer><script>(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter16972024 = new Ya.Metrika({"id":"16972024","webvisor":true,"clickmap":true,"trackLinks":true,"accurateTrackBounce":true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/16972024" style="position:absolute; left:-9999px;"></div></noscript><div class="yandex-metrica-api i-bem" data-bem='{"yandex-metrica-api":{"counterId":"16972024"}}'></div><script src="../../../../_client/client.js?1810" type="module"></script></body></html>

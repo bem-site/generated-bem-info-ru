@@ -1,0 +1,358 @@
+<!DOCTYPE html><html class="ua_js_no" lang="ru"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Модификаторы блока / Справочное руководство i-bem.js / Классический БЭМ-стек / Учебные материалы / БЭМ</title><script>(function(e,c){e[c]=e[c].replace(/(ua_js_)no/g,"$1yes");})(document.documentElement,"className");(function(d,n){d.documentElement.className+=" ua_svg_"+(d[n]&&d[n]("http://www.w3.org/2000/svg","svg").createSVGRect?"yes":"no");})(document,"createElementNS");</script><link rel="stylesheet" href="../../../../tutorials.min.css?3339"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="bem-site-root" content="../../../../"><link rel="canonical" href="https://ru-test.bem.info/tutorials/classic/i-bem/modifiers/"><link rel="alternate" hreflang="en" href="https://en-test.bem.info/tutorials/classic/i-bem/modifiers/"><link rel="alternate" hreflang="ru" href="https://ru-test.bem.info/tutorials/classic/i-bem/modifiers/"><meta name="robots" content="noindex"><meta property="og:image" content="../../../../og_image/logo_theme_generated.png"><meta property="og:url" content="../../../../tutorials/classic/i-bem/modifiers/"><meta property="og:type" content="article"><meta property="og:description" content="Модификаторы блока"><meta property="og:keywords" content="tutorials, classic, i-bem.js"><link rel="shortcut icon" href="../../../../favicon.ico"></head><body class="page"><div class="header page__head i-bem" data-bem='{"header":{}}'><div class="header__layout"><a class="logo header__logo" href="../../../../"><svg class="logo__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101.7 84"><path d="M0 13h23.8v7H0zM0 0h23.8v7H0zm42.7 25.9H0v7h41.1c4.5 0 15 .1 18.9 6.4v-3.9c-1.9-6.2-7.5-9.5-17.3-9.5zm.1 13H0v7h41.1c10 0 16.3.4 18.9 1.8v-3.1c-2-4.9-10.4-5.7-17.2-5.7zm-.1 33H0v-7h41.1c4.5 0 15-.1 18.9-6.4v3.9c-1.9 6.2-7.5 9.5-17.3 9.5zm.1-13H0v-7h41.1c10 0 16.3-.4 18.9-1.8v3.1c-2 4.9-10.4 5.7-17.2 5.7zM70.4 84h31.4v-4.3H71.3c-2.7 0-9.1-.1-11.4-3.8v2.4C61 82 64.4 84 70.4 84zm-.1-7.9h31.4v-4.3H71.3c-6.1 0-9.9-.2-11.4-1.1v1.9c1.2 3 6.3 3.5 10.4 3.5z"/></svg></a><div class="lang-switcher header__lang"><a class="lang-switcher__link" href="https://en-test.bem.info/tutorials/classic/i-bem/modifiers/">EN</a><span class="lang-switcher__separator"> </span>RU</div><a class="header__forum" href="https://github.com/bem-site/bem.info/issues">Issues</a></div><div class="search header__search i-bem" data-bem='{"search":{}}'><div class="search__form"><span class="input input_type_search i-bem" data-bem='{"input":{}}'><span class="input__box"><input class="input__control" name="q" placeholder="Поиск по сайту" autocomplete="off" type="search"></span></span><span class="search__submit" role="button" aria-label="search"><div class="search-icon search__submit-icon"><svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="6"/><path d="M11 11l5 5"/></svg></div></span><div class="search__results" role="listbox"></div></div></div><ul class="breadcrumbs header__breadcrumbs"><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../tutorials/">Учебные материалы</a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../../../../tutorials/classic/">Классический БЭМ-стек</a></li></ul><div class="header__toggle"><span class="header__toggle-line"></span></div></div><div class="sitemap page__sitemap"><div class="sitemap__section sitemap__section_site_methodology"><h1 class="sitemap__title sitemap__title_site_methodology"><a class="sitemap__link" href="../../../../methodology/">Методология</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/quick-start/">Быстрый старт</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/key-concepts/">Основные понятия</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/naming-convention/">Соглашение по именованию</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/css/">CSS</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/html/">HTML</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/js/">JavaScript</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/filestructure/">Файловая структура</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/redefinition-levels/">Уровни переопределения</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/block-modification/">Модификация блока</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/build/">Сборка</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/declarations/">Декларации</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/solved-problems/">Какие проблемы решает</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/history/">История создания</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/articles/">Статьи</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../methodology/faq/">FAQ</a></li></ul></div><div class="sitemap__section sitemap__section_site_technologies"><h1 class="sitemap__title sitemap__title_site_technologies"><a class="sitemap__link" href="../../../../technologies/">Технологии</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../technologies/classic/">Классический БЭМ-стек</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/bemjson/">Данные (BEMJSON)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/bem-xjst/">Шаблоны (BEMHTML, BEMTREE)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/i-bem/">Клиентский JavaScript (i-bem.js)</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/deps/">Зависимости</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/deps-spec/">Спецификация DEPS</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/classic/project-stub/">Заготовка проекта</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../technologies/bem-react/">bem-react</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/motivation/">Зачем БЭМ, если есть React?</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/quick-start/">Быстрый старт</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/structure/">Структура компонента</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/lazy/">Ленивые модификаторы</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/classname/">classname</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/classnames/">classnames</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/core/">core</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../technologies/bem-react/di/">di</a></li></ul></div><div class="sitemap__section sitemap__section_site_toolbox"><h1 class="sitemap__title sitemap__title_site_toolbox"><a class="sitemap__link" href="../../../../toolbox/">Инструментарий</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/enb/">ENB</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/api/">API</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/techs/">Технологии для работы с файлами</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/cli/">Использование из командной строки</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/terms/">Терминология</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/build-project/">Как собрать проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/write-tech/">Как написать технологию</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/express/">Автоматизация с помощью express</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/enb/packages/">Пакеты ENB</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/bemhint/">bemhint</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/bemhint/css-naming/">CSS именование</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/bemhint/fs-naming/">Именование файлов</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/bemhint/deps-schema/">DEPS схема</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/bemhint/deps-specification/">DEPS спецификация</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/bem-tools/">bem-tools</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/bemmet/">bemmet</a></li><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../toolbox/sdk/">SDK</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-walk/">@bem/sdk.walk</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-config/">@bem/sdk.config</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-naming-entity/">@bem/sdk.naming.entity </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-naming-cell-stringify/">@bem/sdk.naming.cell.stringify </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-naming-cell-pattern-parser/">@bem/sdk.naming.cell.pattern-parser</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-naming-file-stringify/">@bem/sdk.naming.file.stringify</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-decl/">@bem/sdk.decl </a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-bemjson-to-decl/">@bem/sdk.bemjson-to-decl</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-bemjson-to-jsx/">@bem/sdk.bemjson-to-jsx</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-import-notation/">@bem/sdk.import-notation</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-graph/">@bem/sdk.graph</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-deps/">@bem/sdk.deps</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-entity-name/">@bem/sdk.entity-name</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-file/">@bem/sdk.file</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-cell/">@bem/sdk.cell</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-bundle/">@bem/sdk.bundle</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../toolbox/sdk/bem-bemjson-node/">@bem/sdk.bemjson-node</a></li></ul></div><div class="sitemap__section sitemap__section_site_libraries"><h1 class="sitemap__title sitemap__title_site_libraries"><a class="sitemap__link" href="../../../../libraries/">Библиотеки</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../libraries/classic/">Классические БЭМ-библиотеки</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../libraries/classic/bem-core/">bem-core</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../libraries/classic/bem-components/">bem-components</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../libraries/classic/bem-history/">bem-history</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../libraries/classic/principles/">Принципы разработки БЭМ-библиотек</a></li></ul></div><div class="sitemap__section sitemap__section_site_tutorials"><h1 class="sitemap__title sitemap__title_site_tutorials"><a class="sitemap__link" href="../../../../tutorials/">Учебные материалы</a></h1><ul class="sitemap__tree"><li class="sitemap__tree-item-1"><a class="sitemap__link" href="../../../../tutorials/classic/">Классический БЭМ-стек</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/quick-start-static/">Собираем статическую страницу</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/start-with-project-stub/">Создаём статический БЭМ-проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/start-with-bem-express/">Создаём динамический БЭМ-проект</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/i-bem/">Справочное руководство i-bem.js</a></li><li class="sitemap__tree-item-2"><a class="sitemap__link" href="../../../../tutorials/classic/dist-quick-start/">Dist bem-components: подключаем блоки на страницу</a></li></ul></div></div><div class="page__menu"><ul class="nav page__nav"><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/quick-start-static/">Собираем статическую страницу</a></div><div class="nav__content" style="margin-left:16px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#описание-урока">Описание урока</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#клонируем-бэм-проект">Клонируем БЭМ-проект</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#создаем-страницу">Создаем страницу</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#создаем-блоки">Создаем блоки</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/quick-start-static/#результат">Результат</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/start-with-project-stub/">Создаём статический БЭМ-проект</a></div><div class="nav__content" style="margin-left:16px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#зависимости">Зависимости</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#создание-проекта">Создание проекта</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#структура-проекта">Структура проекта</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#шаг-за-шагом">Шаг за шагом</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#внесение-изменений-в-страницы">Внесение изменений в страницы</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#bemhtml-шаблоны">BEMHTML-шаблоны</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#зависимости-блоков">Зависимости блоков</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#подключение-библиотек">Подключение библиотек</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#миксы-блоков-и-элементов">Миксы блоков и элементов</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#декларативный-javascript">Декларативный JavaScript</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#создание-новых-страниц">Создание новых страниц</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#полная-сборка-проекта">Полная сборка проекта</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-project-stub/#подведем-итоги">Подведем итоги</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/start-with-bem-express/">Создаём динамический БЭМ-проект</a></div><div class="nav__content" style="margin-left:16px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-bem-express/#введение">Введение</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-bem-express/#приложение-hello-world">Приложение Hello, World</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/start-with-bem-express/#приложение-social-services-search-robot">Приложение Social Services Search Robot</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/i-bem/">Справочное руководство i-bem.js</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:32px"><a class="nav__link" href="../../../../tutorials/classic/i-bem/block/">Описание структуры блока</a></div><div class="nav__content" style="margin-left:32px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/block/#блок-с-javascript-функциональностью">Блок с JavaScript функциональностью</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/block/#простой-пример-с-consolelog">Простой пример с console.log</a></div></li><li class="nav__item nav__item_current"><div class="nav__title" style="margin-left:32px">Модификаторы блока</div><div class="nav__content nav__content_visible" style="margin-left:32px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#установка-модификатора-на-блок-и-реакция-на-это">Установка модификатора на блок и реакция на это</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#установка-модификатора-для-элемента">Установка модификатора для элемента</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#переключение-toggle-модификатора">Переключение (toggle) модификатора</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#удаление-модификатора">Удаление модификатора</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/modifiers/#до-установки-модификатора">До установки модификатора</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:32px"><a class="nav__link" href="../../../../tutorials/classic/i-bem/live-init/">Живая (ленивая) инициализация</a></div><div class="nav__content" style="margin-left:32px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#статические-свойства-lazyinit-и-oninit">Статические свойства lazyInit и onInit</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#инициализация-блока-по-dom-событию">Инициализация блока по DOM-событию</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#делегированная-инициализация">Делегированная инициализация</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#обработчики-событий-ленивой-инициализации">Обработчики событий ленивой инициализации</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#инициализация-по-нескольким-событиям">Инициализация по нескольким событиям</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/i-bem/live-init/#бэм-события">БЭМ-события</a></div></li><li class="nav__item"><div class="nav__title" style="margin-left:16px"><a class="nav__link" href="../../../../tutorials/classic/dist-quick-start/">Dist bem-components: подключаем блоки на страницу</a></div><div class="nav__content" style="margin-left:16px"><a class="nav__link nav__chapter" href="../../../../tutorials/classic/dist-quick-start/#описание-урока">Описание урока</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/dist-quick-start/#подключение-библиотеки">Подключение библиотеки</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/dist-quick-start/#работа-с-блоками">Работа с блоками</a><a class="nav__link nav__chapter" href="../../../../tutorials/classic/dist-quick-start/#результат">Результат</a></div></li></ul></div><div class="page__main"><div class="article page__content"><h1 class="article__heading article__heading_level_1" id="модификаторы"><a class="article__heading-anchor" href="#модификаторы"></a>Модификаторы</h1><p class="article__paragraph">В БЭМ модификаторы выражают состояние блока. Чтобы привести блок в новое состояние,
+ему назначают модификатор. Это запускает соответствующий модификатору callback.</p><h2 class="article__heading article__heading_level_2" id="установка-модификатора-на-блок-и-реакция-на-это"><a class="article__heading-anchor" href="#установка-модификатора-на-блок-и-реакция-на-это"></a>Установка модификатора на блок и реакция на это</h2><pre class="article__code">pure.bundles/
+    002-change-modifier/
+        blocks/
+            call-button/
+                call-button.bemhtml.js
+                call-button.css
+                call-button.js
+                call-button.png
+        002-change-modifier.bemjson.js
+        002-change-modifier.html
+</pre><p class="article__paragraph">В примере <a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/002-change-modifier/002-change-modifier.html" target="_blank" rel="noopener noreferrer">002-change-modifier</a>
+(<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/002-change-modifier/002-change-modifier.bemjson.js" target="_blank" rel="noopener noreferrer">BEMJSON</a>)
+вы можете увидеть кнопку, меняющую свое состояние по клику на неё.</p><p class="article__paragraph">Кнопка&nbsp;— это блок <code class="article__inline-code">call-button</code>, представленный
+<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/002-change-modifier/blocks/call-button/call-button.css" target="_blank" rel="noopener noreferrer">CSS</a>,
+<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/002-change-modifier/blocks/call-button/call-button.js" target="_blank" rel="noopener noreferrer">JavaScript</a>
+и <a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/002-change-modifier/blocks/call-button/call-button.bemhtml" target="_blank" rel="noopener noreferrer">шаблонами</a>.
+Все эти технологии находятся в <a class="article__link" href="https://github.com/bem/bem-js-tutorial/tree/master/pure.bundles/002-change-modifier/blocks/call-button" target="_blank" rel="noopener noreferrer">папке блока</a>.</p><p class="article__paragraph">В JavaScript-файле <a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/002-change-modifier/blocks/call-button/call-button.js" target="_blank" rel="noopener noreferrer">blocks/call-button/call-button.js</a>&nbsp;— стандартная декларация для
+DOM-блока.</p><p class="article__paragraph">Callback, соответствующий модификатору <code class="article__inline-code">js_inited</code>, запускается, когда ядро
+инициализирует блок. В этом примере всё начинается с назначения обработчика для
+события <code class="article__inline-code">click</code> на DOM-узле блока. Для этого используется метод <code class="article__inline-code">_domEvents()</code>.
+Callback устанавливает блоку модификатор <code class="article__inline-code">calling</code> при помощи метода <code class="article__inline-code">setMod</code>.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'call-button'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>().<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'calling'</span>);
+                });
+            }
+        }
+
+...
+</pre><p class="article__paragraph">Обратите внимание, что здесь используется булевый модификатор, у него нет
+значений. Но, как вы раньше могли видеть, очень часто модификатор&nbsp;— это пара
+«ключ-значение». В таких случаях в метод <code class="article__inline-code">setMod</code> передаётся и имя, и значение
+модификатора:</p><pre class="article__code article__code_correctHeight"><span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'status'</span>, <span class="hljs-string">'on'</span>);
+<span class="hljs-comment">//...</span>
+<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'status'</span>, <span class="hljs-string">'off'</span>);
+</pre><p class="article__paragraph">Метод <code class="article__inline-code">setMod</code> назначает блоку соответствующий модификатору CSS-класс, и блок
+меняет свой внешний вид. Если кроме этого нужны ещё какие-то действия, запишите
+их в функции callback на установку модификатора. Например, так:</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'call-button'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : { ... },
+        <span class="hljs-string">'calling'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(<span class="hljs-string">'link'</span>).<span class="hljs-property">domElem</span>.<span class="hljs-title function_">text</span>(<span class="hljs-string">'Calling...'</span>);
+        }
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Здесь вы можете производить любые вычисления и совершать любые действия с
+блоком. А раз есть доступ к DOM-узлу блока и вложенным в него элементам, то
+структуру блока тоже можно поменять. Для обращения к элементам блока используется
+метод <code class="article__inline-code">_elem</code>, а в качестве параметра передаётся имя элемента.</p><p class="article__paragraph">Концепция известных состояний блока, выраженных модификаторами,&nbsp;— это очень
+мощный и эффективный способ описания интерфейсных компонентов.</p><p class="article__paragraph">Всё, что относится к определенному состоянию блока, инкапсулировано в нужный
+модификатор. Откуда бы вы ни изменили модификатор блока, блок знает, что
+делать.</p><p class="article__paragraph">Действия модификаторов описываются декларативно. Это позволяет разработчику
+расширить функциональность модификатора при повторном использовании или полностью её
+переопределить. Ниже это продемонстрировано.</p><h2 class="article__heading article__heading_level_2" id="установка-модификатора-для-элемента"><a class="article__heading-anchor" href="#установка-модификатора-для-элемента"></a>Установка модификатора для элемента</h2><pre class="article__code">pure.bundles/
+    003-element-modifier/
+        blocks
+            page/
+            sign/
+            text/
+            traffic-light/
+                __go/
+                    traffic-light__go.mp3
+                traffic-light.bemhtml.js
+                traffic-light.css
+                traffic-light.js
+        003-element-modifier.bemjson.js
+        003-element-modifier.html
+</pre><p class="article__paragraph">В БЭМ модификаторы могут быть не только у блоков, но и у элементов. Используемые для
+этого методы похожи.</p><p class="article__paragraph">Рассмотрим на примере
+<a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/003-element-modifier/003-element-modifier.html" target="_blank" rel="noopener noreferrer">003-element-modifier</a>
+(<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/003-element-modifier/003-element-modifier.bemjson.js" target="_blank" rel="noopener noreferrer">BEMJSON</a>).</p><p class="article__paragraph">Как и в предыдущих примерах, блок <code class="article__inline-code">traffic-light</code> реализован в технологиях
+<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/003-element-modifier/blocks/traffic-light/traffic-light.css" target="_blank" rel="noopener noreferrer">CSS</a>,
+<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/003-element-modifier/blocks/traffic-light/traffic-light.js" target="_blank" rel="noopener noreferrer">JavaScript</a>
+и <a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/003-element-modifier/blocks/traffic-light/traffic-light.bemhtml" target="_blank" rel="noopener noreferrer">BEMHTML</a>, объявляется как DOM-блок.</p><p class="article__paragraph">Он содержит три элемента: <code class="article__inline-code">stop</code>, <code class="article__inline-code">slow</code> и <code class="article__inline-code">go</code>. У каждого из них может быть
+модификатор <code class="article__inline-code">status</code> со значениями <code class="article__inline-code">on</code> и <code class="article__inline-code">off</code>.</p><pre class="article__code">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'traffic-light'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                ...
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'status'</span>, <span class="hljs-string">'stop'</span>);
+            }
+        },
+        ...
+}));
+
+});
+</pre><p class="article__paragraph">Светофор работает, переключая модификатор <code class="article__inline-code">status</code> со значения <code class="article__inline-code">stop</code> на <code class="article__inline-code">slow</code>
+и затем на <code class="article__inline-code">go</code>. При инициализации блока устанавливается модификатор
+<code class="article__inline-code">status_stop</code>, и это начинает цикл.</p><p class="article__paragraph">Действия модификатора <code class="article__inline-code">status</code> описаны в функции callback, общей для всех значений.
+Это позволяет избежать лишнего копирования в случаях с похожей функциональностью разных
+модификаторов.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'traffic-light'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-string">'traffic-light'</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : { ... },
+
+        <span class="hljs-string">'status'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params">modName, modVal, oldModVal</span>) {
+            <span class="hljs-built_in">clearTimeout</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">timer</span>);
+
+            <span class="hljs-keyword">var</span> nextStatus = {
+                    <span class="hljs-string">'stop'</span> : <span class="hljs-string">'slow'</span>,
+                    <span class="hljs-string">'slow'</span> : <span class="hljs-string">'go'</span>,
+                    <span class="hljs-string">'go'</span> : <span class="hljs-string">'stop'</span>
+                },
+                _this = <span class="hljs-variable language_">this</span>;
+
+            oldModVal &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(oldModVal).<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'status'</span>, <span class="hljs-string">'off'</span>);
+
+            <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(modVal).<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'status'</span>, <span class="hljs-string">'on'</span>);
+
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">timer</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                _this.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'status'</span>, nextStatus[modVal]);
+            }, <span class="hljs-number">2000</span>);
+        }
+    },
+    ...
+}));
+
+});
+</pre><p class="article__paragraph">В callback приходят следующие аргументы:</p><ol class="article__list article__list_ordered"><li class="article__list-item"><p class="article__paragraph">Имя модификатора,</p></li><li class="article__list-item"><p class="article__paragraph">Устанавливаемое значение,</p></li><li class="article__list-item"><p class="article__paragraph">Предыдущее значение.</p></li></ol><p class="article__paragraph">С использованием этой информации можно действовать по-разному в зависимости от
+устанавливаемого значения.</p><p class="article__paragraph">Здесь соответствующему элементу назначается модификатор <code class="article__inline-code">status_on</code>&nbsp;— его фонарь
+включается, а предыдущий активный прожектор получает модификатор <code class="article__inline-code">status_off</code>.</p><p class="article__paragraph">Для установки модификаторов на элементы используется уже знакомый метод
+<code class="article__inline-code">setMod</code>, но вызывать его нужно на экземпляре элемента, найденном через <code class="article__inline-code">_elem</code>.</p><p class="article__paragraph">То есть, используя разные параметры, методом <code class="article__inline-code">setMod</code> можно:</p><pre class="article__code article__code_correctHeight"><span class="hljs-comment">// назначить модификатор блоку</span>
+<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'modName'</span>, <span class="hljs-string">'modValue'</span>);
+
+<span class="hljs-comment">// назначить модификатор элементу блока</span>
+<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>(<span class="hljs-string">'elemName'</span>).<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'modName'</span>, <span class="hljs-string">'modValue'</span>);
+</pre><p class="article__paragraph">Программирование действий, соответствующих модификаторам элементов, похоже на то
+же самое для модификаторов блоков. Для элемента можно объявить JS-реализацию
+через <code class="article__inline-code">bemDom.declElem</code> и описать свойство <code class="article__inline-code">onSetMod</code>:</p><pre class="article__code article__code_correctHeight">bemDom.<span class="hljs-title function_">declElem</span>(<span class="hljs-string">'my-block'</span>, <span class="hljs-string">'elemName'</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+      <span class="hljs-string">'foo'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+          <span class="hljs-comment">// Запускается, если элемент получает любое значение</span>
+          <span class="hljs-comment">// модификатора `foo`</span>
+      },
+      <span class="hljs-string">'bar'</span> : {
+          <span class="hljs-string">'qux'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+              <span class="hljs-comment">// Запускается при установке на элементе значения `qux` для</span>
+              <span class="hljs-comment">// модификатора `bar`</span>
+          },
+          <span class="hljs-string">''</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+              <span class="hljs-comment">// Запускается при удалении модификатора `bar` с элемента</span>
+          }
+        }
+    }
+});
+</pre><p class="article__paragraph">В этом примере какая-то функциональность есть только у элемента <code class="article__inline-code">go</code>.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'traffic-light'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-keyword">var</span> goSound = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Audio</span>(<span class="hljs-string">'blocks/traffic-light/__go/traffic-light__go.mp3'</span>);
+
+bemDom.<span class="hljs-title function_">declElem</span>(<span class="hljs-string">'traffic-light'</span>, <span class="hljs-string">'go'</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'status'</span> : {
+            <span class="hljs-string">'on'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                goSound.<span class="hljs-title function_">play</span>();
+            },
+
+            <span class="hljs-string">'off'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                goSound.<span class="hljs-title function_">pause</span>();
+            }
+        }
+    }
+});
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: { ... }
+}));
+
+});
+</pre><p class="article__paragraph">Это включает звук светофора, когда элемент переключен в состояние <code class="article__inline-code">status_on</code>,
+и выключает его при назначении модификатора <code class="article__inline-code">status_off</code>.</p><h2 class="article__heading article__heading_level_2" id="переключение-toggle-модификатора"><a class="article__heading-anchor" href="#переключение-toggle-модификатора"></a>Переключение (toggle) модификатора</h2><pre class="article__code">pure.bundles/
+    004-toggle-mod/
+        blocks/
+            page/
+            switch/
+                switch.bemhtml.js
+                switch.css
+                switch.js
+        004-toggle-mod.bemjson.js
+        004-toggle-mod.html
+</pre><p class="article__paragraph">Если у модификатора 2 значения, и они должны меняться друг за другом, удобно
+воспользоваться переключением (toggle). Это показано в примере
+<a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/004-toggle-mod/004-toggle-mod.html" target="_blank" rel="noopener noreferrer">004-toggle-mod</a>
+(<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/004-toggle-mod/004-toggle-mod.bemjson.js" target="_blank" rel="noopener noreferrer">BEMJSON</a>).</p><p class="article__paragraph">На этой странице вы можете видеть кнопку&nbsp;— блок <code class="article__inline-code">swicth</code> с модификатором
+<code class="article__inline-code">switched_off</code>, что означает выключенное состояние.</p><p class="article__paragraph">Файл
+<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/004-toggle-mod/blocks/switch/switch.js" target="_blank" rel="noopener noreferrer">switch.js</a>
+говорит кнопке слушать события <code class="article__inline-code">click</code> и переключаться из состояния
+<code class="article__inline-code">swicthed_off</code> в <code class="article__inline-code">switched_on</code> и обратно при помощи метода <code class="article__inline-code">toggleMod</code>.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'switch'</span>, [<span class="hljs-string">'i-bem-dom'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom</span>) {
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>().<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">toggleMod</span>(<span class="hljs-string">'switched'</span>, <span class="hljs-string">'on'</span>, <span class="hljs-string">'off'</span>);
+                });
+            }
+        }
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Конечно, то же самое работает и для элементов, если вызвать <code class="article__inline-code">toggleMod</code> на
+экземпляре элемента.</p><h2 class="article__heading article__heading_level_2" id="удаление-модификатора"><a class="article__heading-anchor" href="#удаление-модификатора"></a>Удаление модификатора</h2><pre class="article__code">pure.bundles/
+    005-modifier-removing/
+        blocks/
+            page/
+            todo/
+                todo.bemhtml.js
+                todo.css
+                todo.js
+        005-modifier-removing.bemjson.js
+        005-modifier-removing.html
+</pre><p class="article__paragraph">Удаление модификатора с элемента (или блока) проиллюстрировано примером
+<a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/005-modifier-removing/005-modifier-removing.html" target="_blank" rel="noopener noreferrer">005-modifier-removing</a>
+(<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/005-modifier-removing/005-modifier-removing.bemjson.js" target="_blank" rel="noopener noreferrer">BEMJSON</a>).
+Это страница с todo-листом, в котором каждое дело показано клейким листочком.
+Листочек можно спрятать (пометить, как выполненный), кликнув на него.</p><p class="article__paragraph">Список представлен блоком <code class="article__inline-code">todo</code>, а каждое дело в нём&nbsp;— элементом <code class="article__inline-code">task</code>. По
+умолчанию все дела видимы, им назначен модификатор <code class="article__inline-code">visible_yes</code>.</p><pre class="article__code article__code_correctHeight"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"todo ..."</span> <span class="hljs-attr">data-bem</span>=<span class="hljs-string">"{ 'todo': {} }"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"todo__task todo__task_visible_yes"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Click to remove"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"todo__task-inner"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Lean more about BEM<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+      Visit bem.info to learn more.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  ...
+</pre><p class="article__paragraph">Поведение блока описано в файле
+<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/005-modifier-removing/blocks/todo/todo.js" target="_blank" rel="noopener noreferrer">todo.js</a>.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'todo'</span>, [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'jquery'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, $</span>) {
+
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">Task</span> = bemDom.<span class="hljs-title function_">declElem</span>(<span class="hljs-string">'todo'</span>, <span class="hljs-string">'task'</span>);
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'task'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) {
+                    $(e.<span class="hljs-property">currentTarget</span>).<span class="hljs-title function_">bem</span>(<span class="hljs-title class_">Task</span>).<span class="hljs-title function_">delMod</span>(<span class="hljs-string">'visible'</span>);
+                });
+            }
+        }
+    }
+}));
+
+});
+</pre><p class="article__paragraph">Как только пользователь кликает на элемент <code class="article__inline-code">task</code>, его модификатор <code class="article__inline-code">visible</code>
+удаляется при помощи метода <code class="article__inline-code">delMod</code>.</p><p class="article__paragraph">Обратите внимание, что здесь метод <code class="article__inline-code">_domEvents('task')</code> подписывает блок на
+DOM-события его элементов <code class="article__inline-code">task</code>.</p><p class="article__paragraph"><strong class="article__strong">ВАЖНО:</strong> Такой обработчик назначается при инициализации экземпляра блока. Для
+больших списков и динамически добавляемых элементов используйте ленивую
+инициализацию через <code class="article__inline-code">lazyInit</code> и <code class="article__inline-code">onInit</code>, которая описана дальше.</p><h2 class="article__heading article__heading_level_2" id="до-установки-модификатора"><a class="article__heading-anchor" href="#до-установки-модификатора"></a>До установки модификатора</h2><pre class="article__code">pure.bundles/
+    006-before-set-mod/
+        blocks/
+            page/
+            accordion-menu/
+                accordion-menu.bemhtml.js
+                accordion-menu.css
+                accordion-menu.js
+        006-before-set-mod.bemjson.js
+        006-before-set-mod.html
+</pre><p class="article__paragraph">Иногда нужно произвести какие-то действия до установки модификатора. Это
+особенно применимо, если в результате вычислений оказывается, что установку
+модификатора надо предотвратить.</p><p class="article__paragraph">Пример
+<a class="article__link" href="https://bem-site.github.io/bem-js-tutorial/pure.bundles/006-before-set-mod/006-before-set-mod.html" target="_blank" rel="noopener noreferrer">006-before-set-mod</a>
+(<a class="article__link" href="https://github.com/bem/bem-js-tutorial/blob/master/pure.bundles/006-before-set-mod/006-before-set-mod.bemjson.js" target="_blank" rel="noopener noreferrer">BEMJSON</a>)
+демонстрирует такой случай на примере блока
+<a class="article__link" href="https://github.com/bem/bem-js-tutorial/tree/master/pure.bundles/006-before-set-mod/blocks/accordion-menu" target="_blank" rel="noopener noreferrer">accordion-menu</a>.</p><p class="article__paragraph">Меню на странице состоит из нескольких пунктов, каждый из которых может
+раскрываться по клику и открывать доступ к своим подпунктам. Чтобы это
+произошло, обработчик события <code class="article__inline-code">click</code> устанавливает активному пункту модификатор
+<code class="article__inline-code">current</code> со значением <code class="article__inline-code">true</code> и закрывает ранее открытый пункт (то есть задаёт
+ему модификатор <code class="article__inline-code">current</code> со значением <code class="article__inline-code">false</code>).</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'accordion-menu'</span>,
+        [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'jquery'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, $</span>) {
+
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">Item</span> = bemDom.<span class="hljs-title function_">declElem</span>(<span class="hljs-string">'accordion-menu'</span>, <span class="hljs-string">'item'</span>, {
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'current'</span> : {
+            <span class="hljs-string">'true'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_block</span>().<span class="hljs-title function_">setCurrentItem</span>(<span class="hljs-variable language_">this</span>);
+            }
+        }
+    }
+});
+
+<span class="hljs-title function_">provide</span>(bemDom.<span class="hljs-title function_">declBlock</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, {
+
+    <span class="hljs-attr">onSetMod</span>: {
+        <span class="hljs-string">'js'</span> : {
+            <span class="hljs-string">'inited'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-variable language_">this</span>.<span class="hljs-property">_current</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_elem</span>({ elem : <span class="hljs-title class_">Item</span>, modName : <span class="hljs-string">'current'</span>, modVal : <span class="hljs-literal">true</span> });
+
+                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">_domEvents</span>(<span class="hljs-string">'item'</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) {
+                    $(e.<span class="hljs-property">currentTarget</span>).<span class="hljs-title function_">bem</span>(<span class="hljs-title class_">Item</span>).<span class="hljs-title function_">setMod</span>(<span class="hljs-string">'current'</span>, <span class="hljs-literal">true</span>);
+                });
+            }
+        }
+    },
+
+    <span class="hljs-attr">setCurrentItem</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">_current</span> &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-property">_current</span> !== item &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-property">_current</span>.<span class="hljs-title function_">delMod</span>(<span class="hljs-string">'current'</span>);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">_current</span> = item;
+    }
+
+}));
+
+});
+</pre><p class="article__paragraph"><strong class="article__strong">ВАЖНО:</strong> Обратите внимание, что здесь используется jQuery. Для этого потребовалось
+изменить декларацию модуля. Библиотека bem-core использует модульную систему
+<a class="article__link" href="https://github.com/ymaps/modules/blob/master/README.ru.md" target="_blank" rel="noopener noreferrer">ymaps/modules</a>.
+При описании модуля все зависимые модули должны быть явно указаны.</p><p class="article__paragraph">Пример с меню становится более интересным, если у меню могут быть неактивные
+(disabled) пункты. Такой пункт меню не может быть в состоянии <code class="article__inline-code">current</code>.
+Конечно, всегда можно добавить дополнительную проверку в callback на установку
+модификатора, но bem-core предлагает более элегантное решение. В декларации
+элемента можно воспользоваться свойством <code class="article__inline-code">beforeSetMod</code>, чтобы сообщить элементу,
+что делать до установки модификатора. А если такой callback возвращает <code class="article__inline-code">false</code>, это
+предотвратит установку модификатора.</p><pre class="article__code article__code_correctHeight">modules.<span class="hljs-title function_">define</span>(<span class="hljs-string">'accordion-menu'</span>,
+        [<span class="hljs-string">'i-bem-dom'</span>, <span class="hljs-string">'jquery'</span>], <span class="hljs-keyword">function</span>(<span class="hljs-params">provide, bemDom, $</span>) {
+
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">Item</span> = bemDom.<span class="hljs-title function_">declElem</span>(<span class="hljs-string">'accordion-menu'</span>, <span class="hljs-string">'item'</span>, {
+    <span class="hljs-attr">beforeSetMod</span>: {
+        <span class="hljs-string">'current'</span> : {
+            <span class="hljs-string">'true'</span> : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+                <span class="hljs-keyword">return</span> !<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">hasMod</span>(<span class="hljs-string">'disabled'</span>);
+            }
+        }
+    },
+    ...
+});
+
+});
+</pre><p class="article__paragraph">Здесь происходит проверка, активен ли элемент, и если нет&nbsp;— такой элемент не
+может получить модификатор <code class="article__inline-code">current</code>.</p></div><ul class="article-rewind article-rewind_type_static article-rewind_lang_ru article__rewind"><li class="article-rewind__prev"><a class="article-rewind__prev-link" href="../../../../tutorials/classic/i-bem/block/">Описание структуры блока</a></li> <li class="article-rewind__next"><div class="article-rewind__next-text"></div><a class="article-rewind__next-link" href="../../../../tutorials/classic/i-bem/live-init/">Живая (ленивая) инициализация</a></li></ul></div><div class="page__side"><aside class="aside page__aside"><div class="aside__group"><ul class="article-tags aside__tags"><li class="article-tags__tag"><a class="article-tags__link">tutorials</a></li><li class="article-tags__tag"><a class="article-tags__link">classic</a></li><li class="article-tags__tag"><a class="article-tags__link">i-bem.js</a></li></ul><div class="social-likes aside__social"><a class="social-likes__service social-likes__service_type_facebook" href="https://www.facebook.com/sharer.php?s=100&amp;url=https%3A%2F%2Fru-test.bem.info%2Ftutorials%2Fclassic%2Fi-bem%2Fmodifiers%2F&amp;title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0&amp;image=">Facebook</a> <a class="social-likes__service social-likes__service_type_vk" href="http://vk.com/share.php?&amp;url=https%3A%2F%2Fru-test.bem.info%2Ftutorials%2Fclassic%2Fi-bem%2Fmodifiers%2F&amp;title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0&amp;image=">VKontakte</a> <a class="social-likes__service social-likes__service_type_twitter" href="https://twitter.com/share?&amp;url=https%3A%2F%2Fru-test.bem.info%2Ftutorials%2Fclassic%2Fi-bem%2Fmodifiers%2F&amp;title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0&amp;image=">Twitter</a></div></div><div class="article-amendments aside__amendments"><a class="article-amendments__edit article-amendments__link" href="http://prose.io/#bem-site/bem-js-tutorial/blob/master/02-Modifiers/02-Modifiers.ru.md">Редактировать</a><a class="article-amendments__issue article-amendments__link" href="https://github.com/bem-site/bem-js-tutorial/issues/new">Сообщить об ошибке</a></div></aside></div><footer class="footer page__foot"><div class="footer__layout"><ul class="footer__community"><li class="footer__channel"><a class="footer__channel-link" href="https://telegram.me/bem_ru">Telegram</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://web-standards.slack.com/messages/bem/">Slack</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://www.facebook.com/groups/bem.info/">Facebook</a></li><li class="footer__channel"><a class="footer__channel-link" href="https://twitter.com/bem_ru/">Twitter</a></li></ul></div></footer><script>(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter16972024 = new Ya.Metrika({"id":"16972024","webvisor":true,"clickmap":true,"trackLinks":true,"accurateTrackBounce":true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/16972024" style="position:absolute; left:-9999px;"></div></noscript><div class="yandex-metrica-api i-bem" data-bem='{"yandex-metrica-api":{"counterId":"16972024"}}'></div><script src="../../../../_client/client.js?3339" type="module"></script></body></html>
