@@ -1,6 +1,6 @@
 {
   "source": "bem-site/bem.info",
-  "revision": "d2a10efc49ceb5dbc5ce817872fde2c75443877c",
-  "environment": "staging",
-  "origin": "https://ru-test.bem.info"
+  "revision": "44106f3ef1c642e12e4976c88813326854c2c8d2",
+  "environment": "production",
+  "origin": "https://ru.bem.info"
 }
